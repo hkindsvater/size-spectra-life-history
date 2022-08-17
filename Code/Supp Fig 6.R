@@ -1,0 +1,146 @@
+ 
+
+Tmax=18
+time=1:(Tmax*12)
+# quartz()
+# windowframe=c(4,1)
+#  
+# par(mfrow=windowframe)
+
+plot_length <- function(data, filenames) {
+  
+  
+  matplot(t(data[,-1]), type="l", main=substr(filenames, 23, 31), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+  
+ 
+     
+  return((data[1, -1]))
+    
+}
+
+
+plot_repro <- function(repro_data, length_data, repro_filenames) {
+  #matplot(t(repro_data[,-1]), type="l", main= substr(repro_filenames, 8, 23), col="red", lwd=1.75, lty=1,   
+         # ylab="Reproduction (J)",   xlab= "Age (years)", xaxt="n",  ylim=c(0, 5e+08), xlim=c(0.5, Tmax*12))
+   
+  
+  return(as.numeric(repro_data[1, -1]) )
+   
+}
+ 
+# 
+fit_age <- 1:215 #note we are focused only on growth from 0.5 year to 18 years of age..... 
+# 
+# 
+#### now define functions to calculate metrics
+lifetimeM <-  function(survdata, filenames) {
+    
+  data2 <- survdata$x[-216]
+   maxage <- which(survdata$x < 0.05)
+ # plot(data1[,2]*data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Reproductive value", xlab="Age (years)")
+  #axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+  
+  return(data2)
+  
+} 
+realized_M <-  function(survdata, filenames) {
+  annual_index<- seq(12, 215, 12)/12
+  data1  <- log(survdata$x[annual_index])
+  reg1 <- lm(data1~annual_index)
+  plot(annual_index, data1, ylab = "Ln(proportion surviving)", xlab = "Age (years)")
+  abline(reg1)
+   return(coef(reg1)[[2]])
+  
+} 
+ 
+maxage<-  function(survdata, filenames) {
+  
+  
+  lifespan <- min(which(survdata$x < 0.05))
+  
+  return(lifespan)
+
+}
+  
+  
+#point to the files you want to compare
+
+
+    setwd("~/Results_Supp_Fig6/")
+ data_files <- list.files(pattern = "\\.csv$")
+
+# 
+# ## read in files
+# 
+repro_filenames <- data_files[((length(data_files)/4)+1):(2*(length(data_files)/4))]
+state_filenames <- data_files[(2*(length(data_files)/4)+1):(3*(length(data_files)/4))]
+length_filenames <- data_files[1:(length(data_files)/4)]
+surv_filenames <- data_files[(3*(length(data_files)/4)+1):(4*(length(data_files)/4))]
+
+length_filenames <- unique(length_filenames)
+repro_filenames <- unique(repro_filenames)
+state_filenames <- unique(state_filenames)
+surv_filenames <- unique(surv_filenames)
+
+length_data <- lapply(length_filenames, read.csv)
+repro_data <- lapply(repro_filenames, read.csv)
+state_data <- lapply(state_filenames, read.csv)
+surv_data <- lapply(surv_filenames, read.csv)
+quartz()
+windowframe=c(4,1)
+
+par(mfrow=windowframe)
+L<-mapply(plot_length, length_data, length_filenames)    
+R<-mapply(plot_repro, repro_data, length_data, repro_filenames)
+# RV<-mapply(lifetimeR, repro_data, surv_data, length_filenames)
+# RV <- rbind(RV, rep(0, 12))
+lifespan <- mapply(maxage, surv_data, length_filenames) 
+lifespan[1]<-215
+
+M <- mapply(lifetimeM, surv_data, length_filenames)
+
+truncate_age <- function(kappamat, lifespan) { #where kappamat is L, R, or RV
+  
+  for (i in 1:5) {
+  
+  kappamat[lifespan[i]:(Tmax*12), i] <- NA
+  }
+  return(kappamat)
+  
+}
+
+truncL <- truncate_age(L, lifespan)
+truncR <- truncate_age(R, lifespan)/4.2e+6 
+truncM <- truncate_age() 
+ 
+ 
+ 
+ kappa<-4
+ index <- 1:4
+ 
+ quartz()
+ 
+ pal = c("#FFCE30", "#FF9E79", "#FB6D4C", "#C23B22", "#8A0000", 580000)
+ plot(1:204, truncL[1:204, 1] , type = "n", xaxt="n", xlab="", ylab = "Length (cm)", las = 1)
+ #axis(1, at = seq(0, (17)*12, by=12), labels = (seq(1, 18, by=1)))
+ for (i in 1:length(index)){
+   
+   lines(lowess(1:(lifespan[i]-1), truncL[1:(lifespan[i]-1), index[i]], f = .0005 ), lwd=3, col=pal[i])
+   
+ }
+ 
+ 
+ 
+ 
+ plot(1:204, truncR[1:204, index[1]] , type = "n", xaxt="n", las=1, xlab="Age (years)", ylab = "Reproductive output (kg)")
+ axis(1, at = seq(0, (17)*12, by=12), labels = (seq(1, 18, by=1)))
+ for (i in 1:length(index)){
+   
+   lines(lowess(1:(lifespan[index[i]]-1), truncR[1:(lifespan[index[i]]-1), index[i]], f = .5), lwd=3, col=pal[i])
+   
+ }
+ 
+ matplot(M[, 1:4], col=pal, type="l", lty=1, xaxt="n", las=1, lwd=2, xlab="", ylab= "Survival")
+    legend("topright", bty="n", col=pal,  lty=1, lwd=3, cex=0.5, legend=c("h = 4", "h = 8", "h = 12", "h = 16" ))
+    

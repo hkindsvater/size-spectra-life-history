@@ -1,0 +1,1730 @@
+theta*log(1000)
+-E/(k*Temp[tau]
+)
+c0 <- 1 #
+ Wmax <- 1000#
+     C_w <- matrix(nrow=length(Temp), ncol=Wmax, data=0 )#
+	 Inet<- matrix(nrow=length(Temp), ncol=Wmax, data=0 )#
+#
+  for (w in 1:Wmax) {#
+	for(tau in 1:length(Temp)) {#
+		        C_w[temp, w] <-  exp(c0 + theta*log(w) -E/(k*Temp[tau]))   #
+    				Inet[temp, w] <-  Prey[w] - C_w[temp, w] #
+    }#
+  }#
+   plot(Prey, type="l", xlab <- "Mass", ylab <- "Income from Prey")  #
+  matplot(t(Inet), type = "l", lty=1, lwd=2, ylim=c(0, 5), xlab="Mass (kg)", ylab="Net income", col=c(4, 3, "orange", 2))
+Inet
+Survival <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(Survival, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.00001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 0.02 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.1 #
+ Survival <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(Survival, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+alpha <- 0.02 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Survival <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(Survival, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.00001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 0.2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Survival <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(Survival, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 0.2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Survival <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(Survival, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 0.2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(Survival, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+##predation#
+#
+m1 <- 0.001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 0.2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 10 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 1#rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.1 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 1#rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.0001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish.
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.01 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 1#rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.0001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- 1#rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.0001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+##predation#
+#
+m1 <- 0.0001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+##predation#
+#
+m1 <- 0.0001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (1+exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+##predation#
+#
+m1 <- 0.0001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.001#
+p2 <- 0.5 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.0001 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.1#
+p2 <- 0.2 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. Amazingly, there is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.01 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.1#
+p2 <- 0.2 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.01 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 1000, by=1)#
+#
+p1 <- 0.1#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+alpha <- .2 #rate of decay#
+#
+W <- seq(1, 100, by=1)#
+#
+p1 <- 0.1#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+p1 <- 0.2#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+p1 <- 0#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+alpha <- .2 #rate of decay#
+#
+W <- seq(2, 100, by=1)#
+#
+p1 <- 0#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+alpha <- 1 #rate of decay#
+#
+W <- seq(2, 100, by=1)#
+#
+p1 <- 0#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+alpha <- .1 #rate of decay#
+#
+W <- seq(2, 100, by=1)#
+#
+p1 <- 0#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+m1 <- 0.01 #encounter rate , includes unit conversion from length to mass that comes from accounting for density dependence in the denominator#
+#
+alpha <- .1 #rate of decay#
+#
+W <- seq(2, 100, by=1)#
+#
+p1 <- 0#
+p2 <- 0.6 #
+ Mortality <- (m1/alpha)*( (exp(-alpha*W/p2) - exp(-alpha*W/p1) ) )/(exp(-alpha*W)) #
+quartz()#
+par(mfrow=c(2,2))#
+plot(1-Mortality, type="l", xlab= "Mass", ylab = "Survival")#
+#
+#special cases of the model: ALL prey are available (p1=0, p2=1), mortality is constant. if 0--p2 <1 is available, we see asymptotic mortality. There is a refuge bottleneck if preference window doesn't go down to zero (0 < p1 <p2 <1) that comes because very tiny fish are less available than small fish. #
+Prey <- (m1/alpha^2)*((exp(-alpha*p1*W)*(1+alpha*p1*W) - exp(-alpha*p2*W)*(1+alpha*p2*W) ) / (exp(-alpha*W) )) #
+plot(Prey, xlab="Mass", type="l")
+lion <- read.csv(url("http://www.zoology.ubc.ca/~schluter/WhitlockSchluter/wp-content/data/chapter17/chap17e1LionNoses.csv"))#
+head(lion)
+str(lion)
+lion
+lion <- read.csv(url("http://www.zoology.ubc.ca/~schluter/WhitlockSchluter/wp-content/data/chapter17/chap17e1LionNoses.csv"))#
+head(lion)#
+#
+lion #take a look at the dataframe. Notice no spaces or special #
+#characters in column headings. This is important if using older versions of R#
+names(lion)#
+#
+par(mfrow=c(1,2))#
+hist(lion[,1])#
+hist(lion[,2])#
+#
+plot(ageInYears ~ proportionBlack, data = lion) #basic scatterplot#
+#
+plot(ageInYears ~ proportionBlack, data = lion, pch = 16, col="firebrick", #
+     las = 1, cex = 2, bty = "l", xlim = c(0,0.8), ylim = c(0,14), #
+     ylab = "Age (years)", xlab = "Proportion black")  #fancy plot#
+#
+#to unpack what each of the plot options are, use the command line help:#
+?plot#
+#From there you can click on par, which has the details of all the baseR graphical paramters. #
+par(mfrow=c(1,2)) #this is a magic R command that lets one divide up the plot window into N rows and M columns#
+#(here, N and M are both 2 but could be anything) #
+#
+#try again with both plots side by side:#
+#
+plot(ageInYears ~ proportionBlack, data = lion) #basic scatterplot#
+#
+plot(ageInYears ~ proportionBlack, data = lion, pch = 16, col="firebrick", #
+     las = 1, cex = 1.5, bty = "l", xlim = c(0,0.8), ylim = c(0,14), #
+     ylab = "Age (years)", xlab = "Proportion black")  #fancy plot#
+#
+#Now let's do some stats:#
+#
+lionRegression <- lm(ageInYears ~ proportionBlack, data = lion) #name an object that will hold regression coefficients#
+#take a look at it:#
+lionRegression#
+#
+#you can extract the coefs from this object which can be useful when trying to manually manipulate plots#
+lionSlope <- coef(lionRegression)[2]#
+summary(lionRegression) #old fashioned tests of significance - this is a one sample t-test asking #
+#whether the slope is different than the the null Y = 0 (a flat line). #
+#It also includes standard error estimates on each coefficient#
+#
+abline(lionRegression) #quick method to put a straight line on a plot#
+#
+#######fancier method #
+#
+par(mfrow=c(1,2))#
+#
+plot(ageInYears ~ proportionBlack, data = lion, pch = 16, col="firebrick", #
+     las = 1, cex = 1.5, bty = "l", xlim = c(0,0.8), ylim = c(0,14), #
+     ylab = "Age (years)", xlab = "Proportion black")  #fancy plot#
+#
+xpts <- range(lion$proportionBlack)#
+ypts <- predict(lionRegression, data.frame(proportionBlack = xpts))#
+lines(ypts ~ xpts, lwd = 1.5)#
+#####Now we're going to plot confidence bands on our regression#
+#
+xpt <- seq(min(lion$proportionBlack), max(lion$proportionBlack), #
+           length.out = 100)#
+ypt <- data.frame( predict(lionRegression, #
+                           newdata = data.frame(proportionBlack = xpt), #
+                           interval = "confidence") )#
+lines(ypt$lwr ~ xpt, lwd = 1.5, lty = 2)#
+lines(ypt$upr ~ xpt, lwd = 1.5, lty = 2)#
+#
+#####Compared with a plot of prediction intervals: #
+plot(ageInYears ~ proportionBlack, data = lion, pch = 16, col="firebrick", #
+     las = 1, cex = 1.5, bty = "l", xlim = c(0,0.8), ylim = c(0,14), #
+     ylab = "Age (years)", xlab = "Proportion black")  #fancy plot#
+#
+xpts <- range(lion$proportionBlack)#
+ypts <- predict(lionRegression, data.frame(proportionBlack = xpts))#
+lines(ypts ~ xpts, lwd = 1.5)#
+#
+xpt <- seq(min(lion$proportionBlack), max(lion$proportionBlack), #
+           length.out = 100)#
+ypt <- data.frame(predict(lionRegression, newdata = data.frame(proportionBlack = xpt), #
+                          interval = "prediction", level = 0.95))#
+lines(ypt$lwr ~ xpt, lwd = 1.5, lty = 3)#
+lines(ypt$upr ~ xpt, lwd = 1.5, lty = 3)
+library(ggplot2)#
+library(reshape2)#
+  #rm(list=ls(all=TRUE))#
+#
+ mu_f = matrix(nrow=10, ncol=3, data=rep(seq(0, 0.9, by=0.1), 3)) #make a vector of fishing mortality from 0 to 0.9 for each life-history type#
+ # mu_f = matrix(nrow=10, ncol=3, data=0.3)#
+slot = "YES" #
+#
+ source('~/Dropbox/Manuscripts in Progress/Wrasse dimorphism model/wrasse parameters.R', chdir = TRUE)#
+ # source('~/Dropbox/Manuscripts in Progress/Wrasse dimorphism model/lingcod parameters.R', chdir = TRUE)#
+ #source('~/Dropbox/Manuscripts in Progress/Wrasse dimorphism model/bluegill parameters.R', chdir = TRUE)#
+#
+##################################################################################################################
+#For every level of fishing pressure (0-0.9): #
+###Simulate population dynamics, start from an arbitrary population size and let the population reach a stable age distribution, then start fishing. The population will reach a new, fished, steady state (stable age dist). *Note:  recruitment is based only on Female abundance, and assuming 50:50 offspring sex ratio.#
+ SPR=rep(0, length(mu_f[,1]))#
+Yield = rep(0, length(mu_f[,1]))#
+Maleratio = rep(0, length(mu_f[,1]))#
+OSR = rep(0, length(mu_f[,1]))#
+ SNdepletion = rep(0, length(mu_f[,1]))#
+  NMdepletion = rep(0, length(mu_f[,1]))#
+  Femaledep =   rep(0, length(mu_f[,1]))#
+  for (fish in 1:length(mu_f[,1])) {#
+  	osr <- rep(1, Tmax -1)#
+for(t in 1:(Tmax-1)) {#
+	if (t < Tfishing) {#
+      E[t]=sum(N[, t,1]*pmat[,t,1]*eggs, na.rm=TRUE) #assuming spawning occurs between 1 t and the next and depends ONLY on mature females#
+      P[t] = E[t]#
+      } else {#
+      	#for lingcod#
+       osr[t]=   abs(sum(N[, t,2]*pmat[,Tfishing - 1 ,2]*L[-Amax[2], 2]) / sum(N[, Tfishing - 1,1]*pmat[,Tfishing - 1,1]*L[-Amax[1], 1])  - sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2]) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) ) / sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2] ) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) )#
+     #for wrasse and bluegill  	#
+      osr[t]=   abs(sum(N[, t,2]*pmat[,Tfishing - 1 ,2]*L[-Amax[2], 2],  N[, Tfishing - 1,3]*pmat[,Tfishing - 1,3]*L[-Amax[3], 3] ) / sum(N[, Tfishing - 1,1]*pmat[,Tfishing - 1,1]*L[-Amax[1], 1])  - sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2],  N[, t,3]*pmat[,t,3]*L[-Amax[3], 3] ) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) ) / sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2],  N[, t,3]*pmat[,t,3]*L[-Amax[3], 3] ) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) )#
+#
+      print(osr[t]) #this is the delta OSR relative to the unfished OSR#
+       P[t]= E[t]*osr[t]  #assumes all eggs are fertilized (for now)#
+  for(g in 1:Ngroup) {#
+ N[1,t+1,g]= alpha*P[t]/(1+beta*P[t])*prop[g] #this is the N_0 class that is born and recruits to the population model in the next time step... #
+         # calculate  probability of fishing mortality#
+    age <- 1#
+    for (age in 1:(Amax[g]-1)) {  #
+      if (Tfishing < t) {#
+        Fishing[age,g] = select[age,g]*mu_f[fish, g]#
+        Fishing[Amax[g], g] = select[Amax[g], g]*mu_f[fish, g] #
+      } else {#
+        Fishing[age,g] = 0#
+      } #end if#
+      Catch[,t+1,g] <- N[,t,g]*(1-exp(-Fishing[,g]))  #Note this is catch numbers, not biomass, assumes natural mortality occurs later in the year than fishing#
+      N[age+1,t+1,g] <- N[age,t,g]*exp(-natmort[g]-Fishing[age,g]) #surviving fish in each group enter the next age class in the following year, all fish get to spawn before mortality 		 #
+    } #end second age loop#
+  } #next group#
+} #end t loop#
+SPR[fish] = E[Tfishing+10]/E[Tfishing-1]#
+Yield[fish] = sum(N[,Tfishing+10,]*(1-exp(-Fishing[,])))#
+  Maleratio[fish] = sum(N[, Tfishing+10, 2] *pmat[, Tfishing+10,2])/sum(N[, Tfishing+10, 3]*pmat[, Tfishing+10,3], na.rm=TRUE)#
+#
+ OSR[fish] = sum(N[, Tfishing+10, 1] *pmat[, Tfishing+10,2])/sum(N[-1, Tfishing+10, 2])  #
+#
+  SNdepletion[fish] = sum(N[, Tfishing+10, 3]) #sum(N[, Tfishing+10, 3]*pmat[, Tfishing+10, 3], na.rm=TRUE) #
+  NMdepletion[fish] = sum(N[, Tfishing+10, 2]) #sum(N[, Tfishing+10, 2]*pmat[, Tfishing+10, 2],na.rm=TRUE) #
+ Femaledep[fish] = sum(N[, Tfishing+10, 1]) #
+} #end fish loop#
+##Plot these relationships#
+ # quartz()#
+ # par(mfrow=c(2,2)  )#
+ # #Age-length#
+# ### matplot(L[-(Amax+1), ], type="l", lwd=2, las=1, ylab ="Length", xlab = "Age", col=c('black','blue', 'red'), lty=1, #
+       # # ylim=c(min(L[,3]), max(L[,2])), xlim=c(0, Amax[3]))#
+       # matplot(L[-(Amax+1), ], type="l", lwd=2, las=1, ylab ="Length", xlab = "Age", col=c('black','blue', 'red'), lty=1, #
+       # ylim=c(min(L[,2]), max(L[,2])), xlim=c(0, Amax[2]))#
+  # ###for wrasse  & bluegill#
+ # legend('bottomright', legend=c('Female','Territorial Male', 'Sneaker Male'),  lty=1, col=c('black','blue', 'red'), cex=0.65)#
+#
+ # ###for lingcod#
+ # #legend('bottomright', legend=c('Female','Territorial Male'),  lty=1, col=c('black','blue'), cex=0.65)#
+# #Maturation ogives#
+ # matplot(pmat[,10,], type="l", lwd=2, las=1, lty=1, col=c('black','blue', 'red'),  ylab ="Probability Mature", xlab = "Age",#
+      # ylim=c(0, 1), xlim=c(0, max(Amax)))#
+# plot(eggs, type="l", lwd=2, lty=1, col='black', las=1, ylab="", xlab="Age")  #
+# matplot((select), type="l", lwd=2, lty=3, col=c('black','blue', "red"),las=1, ylab ="Selectivity", xlab ="Age",  ylim=c(0,1), xlim=c(0,  max(Amax)))#
+ # quartz()#
+# plot(colSums(N[,-1,1]), type="l", lwd=3,   ylab="Abundance", xlab="Time", col='black',#
+     # ylim=c(0, max(colSums(N[,,1], na.rm=TRUE))))#
+	# lines(colSums(N[,-1,2]), lwd=3, col='blue')#
+	  # lines(colSums(N[,-1,3]), lwd=3, col='red')#
+  # legend('bottomright', legend=c('Female','Territorial Male', 'Sneaker Male'),  lty=1, lwd=2, col=c('black','blue', 'red'), cex=1, 		bty='n')#
+ 	###for lingcod#
+ #legend('bottomright', legend=c('Female','Territorial Male'),  lty=1, col=c('black','blue'), cex=0.65)#
+#
+  AgeMat<- rbind(N[,Tfishing-1 , 1]*pmat[,Tfishing-1, 1], N[,Tfishing-1, 2]*pmat[,Tfishing-1, 2], N[,Tfishing-1, 3]*pmat[,Tfishing-1, 3]) #
+   males<-colSums(AgeMat[2:3, ], na.rm=TRUE) #get numbers of mature males by age#
+   females<-AgeMat[1, ]  #get numbers of females by age#
+    dat=cbind(females, males)#
+    dat2<-melt(dat, varnames=c("Age", "Sex"))#
+  FAgeMat<- rbind(N[,Tmax-1 , 1]*pmat[,Tmax-1, 1], N[,Tmax-1, 2]*pmat[,Tmax-1, 2], N[,Tmax-1, 3]*pmat[,Tmax-1, 3]) #
+   Fmales<-colSums(FAgeMat[2:3, ], na.rm=TRUE) #get numbers of males by age#
+   Ffemales<-FAgeMat[1, ]  #get numbers of females by age#
+    fdat=cbind(Ffemales, Fmales)
+library(ggplot2)#
+library(reshape2)#
+  #rm(list=ls(all=TRUE))#
+#
+ mu_f = matrix(nrow=10, ncol=3, data=rep(seq(0, 0.9, by=0.1), 3)) #make a vector of fishing mortality from 0 to 0.9 for each life-history type#
+ # mu_f = matrix(nrow=10, ncol=3, data=0.3)#
+slot = "YES" #
+#
+ source('~/Dropbox/Manuscripts in Progress/Wrasse dimorphism model/wrasse parameters.R', chdir = TRUE)#
+ # source('~/Dropbox/Manuscripts in Progress/Wrasse dimorphism model/lingcod parameters.R', chdir = TRUE)#
+ #source('~/Dropbox/Manuscripts in Progress/Wrasse dimorphism model/bluegill parameters.R', chdir = TRUE)#
+#
+##################################################################################################################
+#For every level of fishing pressure (0-0.9): #
+###Simulate population dynamics, start from an arbitrary population size and let the population reach a stable age distribution, then start fishing. The population will reach a new, fished, steady state (stable age dist). *Note:  recruitment is based only on Female abundance, and assuming 50:50 offspring sex ratio.#
+ SPR=rep(0, length(mu_f[,1]))#
+Yield = rep(0, length(mu_f[,1]))#
+Maleratio = rep(0, length(mu_f[,1]))#
+OSR = rep(0, length(mu_f[,1]))#
+ SNdepletion = rep(0, length(mu_f[,1]))#
+  NMdepletion = rep(0, length(mu_f[,1]))#
+  Femaledep =   rep(0, length(mu_f[,1]))#
+  for (fish in 1:length(mu_f[,1])) {#
+  	osr <- rep(1, Tmax -1)#
+for(t in 1:(Tmax-1)) {#
+	if (t < Tfishing) {#
+      E[t]=sum(N[, t,1]*pmat[,t,1]*eggs, na.rm=TRUE) #assuming spawning occurs between 1 t and the next and depends ONLY on mature females#
+      P[t] = E[t]#
+      } else {#
+      	#for lingcod#
+       osr[t]=   abs(sum(N[, t,2]*pmat[,Tfishing - 1 ,2]*L[-Amax[2], 2]) / sum(N[, Tfishing - 1,1]*pmat[,Tfishing - 1,1]*L[-Amax[1], 1])  - sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2]) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) ) / sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2] ) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) )#
+     #for wrasse and bluegill  	#
+      osr[t]=   abs(sum(N[, t,2]*pmat[,Tfishing - 1 ,2]*L[-Amax[2], 2],  N[, Tfishing - 1,3]*pmat[,Tfishing - 1,3]*L[-Amax[3], 3] ) / sum(N[, Tfishing - 1,1]*pmat[,Tfishing - 1,1]*L[-Amax[1], 1])  - sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2],  N[, t,3]*pmat[,t,3]*L[-Amax[3], 3] ) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) ) / sum(N[, t,2]*pmat[,t ,2]*L[-Amax[2], 2],  N[, t,3]*pmat[,t,3]*L[-Amax[3], 3] ) / sum(N[, t,1]*pmat[,t,1]*L[-Amax[1], 1]) )#
+#
+      print(osr[t]) #this is the delta OSR relative to the unfished OSR#
+       P[t]= E[t]*osr[t]  #assumes all eggs are fertilized (for now)#
+  for(g in 1:Ngroup) {#
+ N[1,t+1,g]= alpha*P[t]/(1+beta*P[t])*prop[g] #this is the N_0 class that is born and recruits to the population model in the next time step... #
+         # calculate  probability of fishing mortality#
+    age <- 1#
+    for (age in 1:(Amax[g]-1)) {  #
+      if (Tfishing < t) {#
+        Fishing[age,g] = select[age,g]*mu_f[fish, g]#
+        Fishing[Amax[g], g] = select[Amax[g], g]*mu_f[fish, g] #
+      } else {#
+        Fishing[age,g] = 0#
+      } #end if#
+      Catch[,t+1,g] <- N[,t,g]*(1-exp(-Fishing[,g]))  #Note this is catch numbers, not biomass, assumes natural mortality occurs later in the year than fishing#
+      N[age+1,t+1,g] <- N[age,t,g]*exp(-natmort[g]-Fishing[age,g]) #surviving fish in each group enter the next age class in the following year, all fish get to spawn before mortality 		 #
+    } #end second age loop#
+  } #next group#
+} #end t loop#
+SPR[fish] = E[Tfishing+10]/E[Tfishing-1]#
+Yield[fish] = sum(N[,Tfishing+10,]*(1-exp(-Fishing[,])))#
+  Maleratio[fish] = sum(N[, Tfishing+10, 2] *pmat[, Tfishing+10,2])/sum(N[, Tfishing+10, 3]*pmat[, Tfishing+10,3], na.rm=TRUE)#
+#
+ OSR[fish] = sum(N[, Tfishing+10, 1] *pmat[, Tfishing+10,2])/sum(N[-1, Tfishing+10, 2])  #
+#
+  SNdepletion[fish] = sum(N[, Tfishing+10, 3]) #sum(N[, Tfishing+10, 3]*pmat[, Tfishing+10, 3], na.rm=TRUE) #
+  NMdepletion[fish] = sum(N[, Tfishing+10, 2]) #sum(N[, Tfishing+10, 2]*pmat[, Tfishing+10, 2],na.rm=TRUE) #
+ Femaledep[fish] = sum(N[, Tfishing+10, 1]) #
+} #end fish loop#
+##Plot these relationships#
+ # quartz()#
+ # par(mfrow=c(2,2)  )#
+ # #Age-length#
+# ### matplot(L[-(Amax+1), ], type="l", lwd=2, las=1, ylab ="Length", xlab = "Age", col=c('black','blue', 'red'), lty=1, #
+       # # ylim=c(min(L[,3]), max(L[,2])), xlim=c(0, Amax[3]))#
+       # matplot(L[-(Amax+1), ], type="l", lwd=2, las=1, ylab ="Length", xlab = "Age", col=c('black','blue', 'red'), lty=1, #
+       # ylim=c(min(L[,2]), max(L[,2])), xlim=c(0, Amax[2]))#
+  # ###for wrasse  & bluegill#
+ # legend('bottomright', legend=c('Female','Territorial Male', 'Sneaker Male'),  lty=1, col=c('black','blue', 'red'), cex=0.65)#
+#
+ # ###for lingcod#
+ # #legend('bottomright', legend=c('Female','Territorial Male'),  lty=1, col=c('black','blue'), cex=0.65)#
+# #Maturation ogives#
+ # matplot(pmat[,10,], type="l", lwd=2, las=1, lty=1, col=c('black','blue', 'red'),  ylab ="Probability Mature", xlab = "Age",#
+      # ylim=c(0, 1), xlim=c(0, max(Amax)))#
+# plot(eggs, type="l", lwd=2, lty=1, col='black', las=1, ylab="", xlab="Age")  #
+# matplot((select), type="l", lwd=2, lty=3, col=c('black','blue', "red"),las=1, ylab ="Selectivity", xlab ="Age",  ylim=c(0,1), xlim=c(0,  max(Amax)))#
+ # quartz()#
+# plot(colSums(N[,-1,1]), type="l", lwd=3,   ylab="Abundance", xlab="Time", col='black',#
+     # ylim=c(0, max(colSums(N[,,1], na.rm=TRUE))))#
+	# lines(colSums(N[,-1,2]), lwd=3, col='blue')#
+	  # lines(colSums(N[,-1,3]), lwd=3, col='red')#
+  # legend('bottomright', legend=c('Female','Territorial Male', 'Sneaker Male'),  lty=1, lwd=2, col=c('black','blue', 'red'), cex=1, 		bty='n')#
+ 	###for lingcod#
+ #legend('bottomright', legend=c('Female','Territorial Male'),  lty=1, col=c('black','blue'), cex=0.65)#
+#
+  AgeMat<- rbind(N[,Tfishing-1 , 1]*pmat[,Tfishing-1, 1], N[,Tfishing-1, 2]*pmat[,Tfishing-1, 2], N[,Tfishing-1, 3]*pmat[,Tfishing-1, 3]) #
+   males<-colSums(AgeMat[2:3, ], na.rm=TRUE) #get numbers of mature males by age#
+   females<-AgeMat[1, ]  #get numbers of females by age#
+    dat=cbind(females, males)#
+    dat2<-melt(dat, varnames=c("Age", "Sex"))#
+  FAgeMat<- rbind(N[,Tmax-1 , 1]*pmat[,Tmax-1, 1], N[,Tmax-1, 2]*pmat[,Tmax-1, 2], N[,Tmax-1, 3]*pmat[,Tmax-1, 3]) #
+   Fmales<-colSums(FAgeMat[2:3, ], na.rm=TRUE) #get numbers of males by age#
+   Ffemales<-FAgeMat[1, ]  #get numbers of females by age#
+    fdat=cbind(Ffemales, Fmales)#
+    fdat2<-melt(fdat, varnames=c("Age", "Sex"))
+fdat2
+fdat
+dat
+devtools::install_github("ropensci/rfishbase@sac-null")#
+ library(rfishbase)
+damsels <- species_list(Class = "Pomocanthidae")#
+angels <- species_list(Order = "Pomocentridae")
+damsels
+angels
+library(rfishbase)
+install.packages("rfishbase")
+library(rfishbase)
+damsels <- species_list(Class = "Pomocanthidae")#
+angels <- species_list(Order = "Pomocentridae")
+damsels
+?species_list
+damsels <- species_list(Family = "Pomocanthidae")#
+angels <- species_list(Family = "Pomocentridae")
+damsels
+angels
+damsels <- species_list(Family = "Pomacanthidae")#
+angels <- species_list(Family = "Pomacentridae")
+damsels
+angels
+?maturity
+maturity(damsels)
+angels <- species_list(Family = "Pomacanthidae")#
+damsels <- species_list(Family = "Pomacentridae")
+maturity(angels)
+warnings()
+maturity(damsels)
+warnings()
+length(damsels)
+fecundity(damsels)
+warnings()
+fecundity(angels)
+x<-maturity(angels)
+x
+x$sciname
+x<-maturity(damsels)
+x$sciname
+x=c(1:3)
+y=c(4:7)
+x*y
+y=c(4:6)
+x*y
+# matplot( ((1:Smax)), t( (MTcosts)), type = "l", lty=1, lwd=2,   xlab=" (Mass (kg))", ylab=" (Metabolic rate) in J/season", col=c(4, 3, "orange", 2))  ##this version of
+(0.5:4)/10
+seq(0.5, 4, by=.25)
+seq(0.5, 4, by=.3)
+seq(0.5, 4.1, by=.3)
+seq(0.5, 4.1, by=.28)
+seq(0.5, 4, by=.5)
+seq(0.5, 4, by=.45)
+seq(0.5, 4, by=.4)
+seq(0.5, 4, by=.35)
+length(seq(0.5, 4, by=.35)
+)
+length(seq(0.5, 4, by=.38)
+)
+####in Feb 8 results, kappa (environment richness) and costs of spawning (c1) vary and overall very steep for individuals < 50#
+####in Feb 11 results, kappa (environemnt richness) and temperature vary and c0 = 0.1, c1 is 0.25, so spawning costs are VERY steep for small individuals#
+### in Feb 13 results, kappa and temperature vary, but there are no spawning costs (c2 = 0.1, c1=0)#
+### in Feb 19 results, kappa and temperature vary, but c0 is 0.05 (and c1 is 0.15), so spawning costs are severe for individuals < 80 cm - not that interersting#
+####in Feb 20 the metabolic costs get a lot steeper in warm envieonments, but there are no CoR#
+###in Feb 20.2 the maximum lifespan is much longer#
+###Feb 21 maximum lifespan is the same as Feb 20.2, kappa inclueds 4; max state is greater (375); also rep limit is 2#
+##March 11: same as feb 21 except variance in food is zero and max lifespan is shorter (16 years)#
+setwd("~/Documents/model_output/")#
+data_files <- list.files(pattern = "\\.csv$")#
+#
+repro_filenames <- data_files[((length(data_files)/3)+1):(2*(length(data_files)/3))]   #
+state_filenames <- data_files[(2*(length(data_files)/3)+1):(3*(length(data_files)/3))]#
+length_filenames <- data_files[1:(length(data_files)/3)]#
+#
+length_filenames <- unique(length_filenames)#
+repro_filenames <- unique(repro_filenames)#
+state_filenames <- unique(state_filenames)#
+#
+length_data <- lapply(length_filenames, read.csv)#
+repro_data <- lapply(repro_filenames, read.csv)#
+state_data <- lapply(state_filenames, read.csv)#
+ quartz()#
+  par(mfrow=c(3, 4))#
+plot_length <- function(data, filenames) {#
+	  #data[is.na(data)] <- 0#
+     matplot(t(data[,-1]), type="l", main=c(substr(filenames, 9, 15), substr(filenames, 19, 24)), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, 48), xlab= "Age (years)", xaxt="n")#
+     axis(1, at = seq(0, 60, by=4), labels = (seq(1, 16, by=1)))#
+     }#
+ mapply(plot_length, length_data, length_filenames)
+warnings()
+setwd("~/Documents/tuna_theory/model_output/")#
+data_files <- list.files(pattern = "\\.csv$")#
+#
+repro_filenames <- data_files[((length(data_files)/3)+1):(2*(length(data_files)/3))]   #
+state_filenames <- data_files[(2*(length(data_files)/3)+1):(3*(length(data_files)/3))]#
+length_filenames <- data_files[1:(length(data_files)/3)]#
+#
+length_filenames <- unique(length_filenames)#
+repro_filenames <- unique(repro_filenames)#
+state_filenames <- unique(state_filenames)#
+#
+length_data <- lapply(length_filenames, read.csv)#
+repro_data <- lapply(repro_filenames, read.csv)#
+state_data <- lapply(state_filenames, read.csv)#
+ quartz()#
+  par(mfrow=c(2, 3))#
+plot_length <- function(data, filenames) {#
+	  #data[is.na(data)] <- 0#
+     matplot(t(data[,-1]), type="l", main=c(substr(filenames, 9, 15), substr(filenames, 16, 21)), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, 48), xlab= "Age (years)", xaxt="n")#
+     axis(1, at = seq(0, 64, by=4), labels = (seq(1, 17, by=1)))#
+     }#
+ mapply(plot_length, length_data, length_filenames)
+#!/usr/bin/env Rscript --vanilla#
+#install.packages("fields")#
+# library(fields)#
+ setwd("/Users/hollykindsvater/Documents/tuna_theory/")#
+#
+set.seed(1001)#
+timebin <- 4#
+  # args <-  commandArgs(trailingOnly = TRUE)#
+  # counter <- as.numeric(args[1]) #
+  #  c1 = as.numeric(args[2])#
+  #  Kappa = as.numeric(args[3])#
+  #  Temp = as.numeric(args[4])#
+      Kappa = 1#
+       Temp = 293 #
+       c1=0#
+       counter=1#
+Tmax = 16*timebin  #seasonal time steps, maximum lifespan is 16 years#
+#
+#describe temperature dependent costs#
+k=1.3e-23#
+E = 1.04e-19#
+theta=0.66#
+coef1  = 5e+16 ##normalization constant puts tuna SMR in the same ballpark as the costs Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, #
+# pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press, and 5 degrees of warming doubles costs at 1000kg.  #
+#
+#physiological parameters#
+a <- 1e-5 #from ICCAT 2015 BFT length-weight relationship#
+scale <-  4.2e+6 #J/kg #from Chapman et al. 2011#
+b=1.8#
+d = 2.4#
+#STATE VARIABLES#
+phi=1 # only 1 environment#
+Lmax=375  #maximum size of 4 meters#
+Lmin = 1 #
+Estoresmax=200 #maximum stores in loop  #
+storelimit= 1 #proportion of structural mass that inidivduals can devote to energy storage#
+ storemin = 0.1#
+reprolimit = 2#
+####################################################################################################################################################################################################
+###Lookup Tables - look up costs and food functions so they are not calculated every time#
+     ###Sizespectra allow us to descripbe prey preference, encounter, consumption to predict prey availability and mass-specific mortality:#
+ Smax <- 1500  #total mass maximum in kg#
+##Prey availability   #
+phi_a <- 3 #from table 2.2 in Andersen book#
+ K_c <- 10 #from table 2.2, this is averaged over "all" - so PP in stomach of all preds and preys have a MR of 1224 independently of body size - but htis is something that changes with ecosystem according to KAPPA, eg less in deep sea, more in upwelling#
+ lam <- 1.95 #
+  #Kappa=3#
+ Mass <- 1:Smax#
+Income =  scale*Kappa*phi_a*K_c*Mass^(2-lam) #this describes the scaling with size and ecostystem richness#
+ # plot(Income)#
+SDfood=0#
+minI = Income - SDfood * 2#
+maxI = Income + SDfood * 2#
+bins = 20#
+foodmatrix=matrix(ncol=bins, nrow=length(Mass))#
+weightmatrix=matrix(ncol=bins, nrow=length(Mass))#
+for(p in 1:length(Mass)) { #
+#
+  binEdges = seq(minI[p], maxI[p], length.out=bins+1)#
+  binMids = (binEdges[-1] + binEdges[-(bins+1)])/2#
+  binWeights = pnorm(binEdges[-1], Income[p], SDfood[p]) - pnorm(binEdges[-(bins+1)], Income[p], SDfood[p])#
+  foodmatrix[p, ] <- binMids#
+  }#
+binWeights <- binWeights / sum(binWeights)#
+binWeights = ifelse(is.na(binWeights) == TRUE, 1/bins, binWeights)#
+#
+sto.food <- function (i) {#
+  sample(foodmatrix[i, ], size=1, prob=binWeights)#
+}
+Wtotal=1:100
+Food<-sapply(ceiling(Wtotal), sto.food) #calculates stochastic food quantity for every index individual
+Food
+Food/scale
+Income[1:100]
+Income[1:100]/scale
+Kappa = 0.1#
+       Temp = 293 #
+       c1=0#
+       counter=1#
+Tmax = 16*timebin  #seasonal time steps, maximum lifespan is 16 years#
+#
+#describe temperature dependent costs#
+k=1.3e-23#
+E = 1.04e-19#
+theta=0.66#
+coef1  = 5e+16 ##normalization constant puts tuna SMR in the same ballpark as the costs Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, #
+# pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press, and 5 degrees of warming doubles costs at 1000kg.  #
+#
+#physiological parameters#
+a <- 1e-5 #from ICCAT 2015 BFT length-weight relationship#
+scale <-  4.2e+6 #J/kg #from Chapman et al. 2011#
+b=1.8#
+d = 2.4#
+#STATE VARIABLES#
+phi=1 # only 1 environment#
+Lmax=375  #maximum size of 4 meters#
+Lmin = 1 #
+Estoresmax=200 #maximum stores in loop  #
+storelimit= 1 #proportion of structural mass that inidivduals can devote to energy storage#
+ storemin = 0.1#
+reprolimit = 2#
+####################################################################################################################################################################################################
+###Lookup Tables - look up costs and food functions so they are not calculated every time#
+     ###Sizespectra allow us to descripbe prey preference, encounter, consumption to predict prey availability and mass-specific mortality:#
+ Smax <- 1500  #total mass maximum in kg#
+##Prey availability   #
+phi_a <- 3 #from table 2.2 in Andersen book#
+ K_c <- 10 #from table 2.2, this is averaged over "all" - so PP in stomach of all preds and preys have a MR of 1224 independently of body size - but htis is something that changes with ecosystem according to KAPPA, eg less in deep sea, more in upwelling#
+ lam <- 1.95 #
+  #Kappa=3#
+ Mass <- 1:Smax#
+Income =  scale*Kappa*phi_a*K_c*Mass^(2-lam) #this describes the scaling with size and ecostystem richness#
+ # plot(Income)#
+SDfood=0
+Income/scale
+plot(Income)
+foodmatrix[ceiling(Wtotal), ]
+foodmatrix[ceiling(Wtotal), ]/scale
+foodmatrix[ceiling(Wtotal), ] - MTcosts[ceiling(Wtotal)]
+##mass dependent mortality#
+ phi_p <- 0.07 #from table 2.2 in Andersen book#
+ f_0 <- 0.6 #somewhere between 0 and 1, but predators rarely caught with totally full stomach#
+ hprime <- 17.2 #coefficient on the consumption rate from table 2.2#
+ met_mort <- -0.25 #the argument in Andersen book is that mass-specific rates such as mortality scales with the metabolic esp of 3/4 (Brown et al. 2004). #
+   mu<- phi_p*f_0*hprime*Mass^met_mort #note we are excluding "background" mortality that is independent of size.... #
+      ###COST FUNCTION  - assume metabolic requirements scale with body size and temperature#
+  MTcosts <- coef1*(1:Smax)^theta*exp(-E/(k*Temp))  #costs in J
+foodmatrix[ceiling(Wtotal), ] - MTcosts[ceiling(Wtotal)]
+(foodmatrix[ceiling(Wtotal), ] - MTcosts[ceiling(Wtotal)])/scale
+#DYNAMIC MODEL: life history in a single environment#
+#
+  #dynamic behaviors#
+u <-  seq(0, 1, by = 0.1) #fraction stored (rest allocated to structure)#
+#
+r<-  seq(0, 1, by = 0.1) #fraction allocated to reproduction (rest is saved)
+Y <- 1
+L <- Lmin
+p <- 1
+i <- Tmax-1
+g <- 1
+growth = u[g] #Convert in
+h <- 1
+reprod = r[h]  #Conve
+L=1:100
+Wstructure<-a*L^3 #  structural mass in kg
+Wstructure
+EstoresmaxL <-Wstructure*storelimit*scale #modified from Chapman et al.  #
+         #Energy stores are capped to be a fraction if TOTAL body mass#
+      EcritL <- Wstructure*storemin*scale
+EstoresmaxL
+EstoresmaxL/scale
+EstoresmaxL/scale-MTcosts[ceiling(Wstructure)]
+EstoresmaxL-MTcosts[ceiling(Wstructure)]
+Income[ceiling(Wstructure)]-MTcosts[ceiling(Wstructure)]
+Income[ceiling(Wstructure)]-MTcosts[ceiling(Wstructure)]/scale
+(Income[ceiling(Wstructure)]-MTcosts[ceiling(Wstructure)])/scale
+if (Y*scale < EstoresmaxL)  Estores<- Y*scale  else #
+      		Estores=EstoresmaxL	#stored energy capped at a certain body size#
+	  Wstores<-Estores/(scale) #stores mass in kG#
+	  Wtotal <- Wstores+Wstructure  #body mass in KG
+Wtotal
+L=50
+Wstructure<-a*L^3 #  structural mass in kg#
+      EstoresmaxL <-Wstructure*storelimit*scale #modified from Chapman et al.  #
+         #Energy stores are capped to be a fraction if TOTAL body mass#
+      EcritL <- Wstructure*storemin*scale#
+      if (Y*scale < EstoresmaxL)  Estores<- Y*scale  else #
+      		Estores=EstoresmaxL	#stored energy capped at a certain body size#
+	  Wstores<-Estores/(scale) #stores mass in kG#
+	  Wtotal <- Wstores+Wstructure  #body mass in KG#
+	  Estructure <- Wstructure*scale#
+       Rlimit <- Estructure*reprolimit
+Wstores
+Wtotal
+MTcosts[ceiling(Wtotal)]
+Income[ceiling(Wtotal)]-MTcosts[ceiling(Wtotal)]
+Income[ceiling(Wtotal)]-MTcosts[ceiling(Wtotal)]/scale
+(Income[ceiling(Wtotal)]-MTcosts[ceiling(Wtotal)])/scale
+EstoresP <- Estores*(1-reprod-growth) +foodmatrix[ceiling(Wtotal), ] - MTcosts[ceiling(Wtotal)] #combines mass-dependent food intake and mass-dependent metabolic costs#
+	  EstructureP <- Estructure + growth*Estores#
+	  WstructureP <- EstructureP/scale #
+	  LengthP <-(WstructureP/a) ^(1/3)#
+	  EstoresmaxLP <- EstructureP*storelimit #
+	  EcritLP <- EstructureP*storemin #
+	  EstoresP <- ifelse(EstoresP > EstoresmaxLP, EstoresmaxLP, EstoresP) # this statement caps stores max storage allowed for that size#
+	  EstoresP <- ifelse(EstoresP < 0, 0, EstoresP)	 #if Estores is negative, it is cut off at zero.
+EstoresP
+EstoresP/scale
+reprod-growth
+Estores*(1-reprod-growth) +foodmatrix[ceiling(Wtotal), ]
+(Estores*(1-reprod-growth) +foodmatrix[ceiling(Wtotal), ])/scale
+EstoresP <- Estores*(1-reprod-growth) +foodmatrix[ceiling(Wtotal), ] - MTcosts[ceiling(Wtotal)] #combines mass-dependent food intake
+Estores
+Income[ceiling(Wtotal)]
+MTcosts[ceiling(Wtotal)]
+420+1330-12
+foodmatrix[(]ceiling(Wtotal),]
+foodmatrix[ceiling(Wtotal),]
+Estores
+EstoresP
+EstructureP <- Estructure + growth*Estores#
+	  WstructureP <- EstructureP/scale #
+	  LengthP <-(WstructureP/a) ^(1/3)
+LengthP
+EstoresmaxLP <- EstructureP*storelimit #
+	  EcritLP <- EstructureP*storemin #
+	  EstoresP <- ifelse(EstoresP > EstoresmaxLP, EstoresmaxLP, EstoresP) # this statement caps stores max storage allowed for that size
+EstoresP
+dx <- EstoresP/scale - floor(EstoresP/scale)#
+	  Yindex <- floor(EstoresP/scale)
+Yindex
+dx
+Yindex <- ifelse(Yindex >= Estoresmax,  Estoresmax - 1, Yindex)
+Estoresmax
+if(Estores >= EcritL)  currentR <- min(reprod*Estores, Rlimit) else#
+	   currentR <- 0
+currentR
+Estores
+EcritL
+Rlimit
+Estores >= EcritL
+reprod*Estores
+reprod
+g
+h
+FutureFitness
+mean(Wtfood)
+Wtfood<-foodfit*binWeights
+Yindex[f]
+Yindex
+Wstructure<-a*L^3 #  structural mass in kg#
+      EstoresmaxL <-Wstructure*storelimit*scale #modified from Chapman et al.  #
+         #Energy stores are capped to be a fraction if TOTAL body mass#
+      EcritL <- Wstructure*storemin*scale#
+      if (Y*scale < EstoresmaxL)  Estores<- Y*scale  else #
+      		Estores=EstoresmaxL	#stored energy capped at a certain body size#
+	  Wstores<-Estores/(scale) #stores mass in kG#
+	  Wtotal <- Wstores+Wstructure  #body mass in KG#
+	  Estructure <- Wstructure*scale#
+       Rlimit <- Estructure*reprolimit#
+	   	  #state dynamics
+Rlimit
+EstoresP <- Estores*(1-reprod-growth) +foodmatrix[ceiling(Wtotal), ] - MTcosts[ceiling(Wtotal)] #combines mass-dependent food intake and mass-dependent metabolic costs#
+	  EstructureP <- Estructure + growth*Estores#
+	  WstructureP <- EstructureP/scale #
+	  LengthP <-(WstructureP/a) ^(1/3)#
+	  EstoresmaxLP <- EstructureP*storelimit #
+	  EcritLP <- EstructureP*storemin #
+	  EstoresP <- ifelse(EstoresP > EstoresmaxLP, EstoresmaxLP, EstoresP) # this statement caps stores max storage allowed for that size#
+	  EstoresP <- ifelse(EstoresP < 0, 0, EstoresP)	 #if Estores is negative, it is cut off at zero.
+EstoresP
+L
+dx <- EstoresP/scale - floor(EstoresP/scale)#
+	  Yindex <- floor(EstoresP/scale)#
+	  #make sure the state index does not exceed MAX possible state (AT HIGH END OF STATE RANGE)#
+	  Yindex <- ifelse(Yindex >= Estoresmax,  Estoresmax - 1, Yindex)#
+	   if (ceiling(LengthP) > Lmax) Lindex <- Lmax else#
+	    Lindex <- round(LengthP)
+Lindex
+Yindex
+foodfit = rep(0, length(EstoresP))#
+             for (f in 1:length(EstoresP)) {#
+               if(Estores >= EcritL &   EstoresP[f] >= EcritLP) {#
+              	if (Yindex[f] > 0 )  foodfit[f] <- dx[f]*MaxF[Yindex[f],Lindex,p,i+1] + (1-dx[f])*MaxF[Yindex[f]+1, Lindex, p, i+1] else foodfit[f] <- (1-dx[f])*MaxF[Yindex[f]+1, Lindex, p, i+1]#
+              	} else  foodfit[f] <- 0#
+                      }#end f loop#
+	              Wtfood<-foodfit*binWeights#
+              	FutureFitness = mean(Wtfood)#
+	   #####if current state is greater than EcritL you get current fitness    	 #
+	   if(Estores >= EcritL)  currentR <- min(reprod*Estores, Rlimit) else#
+	   currentR <- 0
+MaxF=array(dim=c(Estoresmax, Lmax, phi, Tmax),data=-1) #this will store the max fitness for every combination of state and times#
+MaxF[,,,Tmax]=0
+i=Tmax-1
+foodfit = rep(0, length(EstoresP))#
+             for (f in 1:length(EstoresP)) {#
+               if(Estores >= EcritL &   EstoresP[f] >= EcritLP) {#
+              	if (Yindex[f] > 0 )  foodfit[f] <- dx[f]*MaxF[Yindex[f],Lindex,p,i+1] + (1-dx[f])*MaxF[Yindex[f]+1, Lindex, p, i+1] else foodfit[f] <- (1-dx[f])*MaxF[Yindex[f]+1, Lindex, p, i+1]#
+              	} else  foodfit[f] <- 0#
+                      }#end f loop#
+	              Wtfood<-foodfit*binWeights#
+              	FutureFitness = mean(Wtfood)#
+	   #####if current state is greater than EcritL you get current fitness    	 #
+	   if(Estores >= EcritL)  currentR <- min(reprod*Estores, Rlimit) else#
+	   currentR <- 0
+currentR
+Wtfood
+foodfit
+binWeights
+set.seed(2001)#
+    nindiv=20000   #
+   Ngroups=1#
+   group=1#
+ 	initialsize <- as.integer(rnorm(nindiv, mean=50, sd=2.5))#
+ 	alive=matrix(ncol = Tmax, nrow= Ngroups, data=0)#
+#
+idist=matrix(data=NA, nrow=nindiv, ncol=Tmax) #keeps track of energetic state over time#
+sizedist=matrix(data=NA, nrow=nindiv, ncol=Tmax)#
+g_allo= array(dim=c(nindiv, Tmax), data = 0 )#
+repro= array(dim=c(nindiv, Tmax), data = 0 ) #
+income=array(dim=c(nindiv, Tmax), data = 0 )#
+#these will give storage fraction and reproduction for each individual, given its two states at each time#
+#
+ z=rnorm(nindiv, mean=scale*a*initialsize^3*(storelimit - 0.05), sd=.0005*scale) ## Generate a population (z) of indivdiuals, condition based on weight  (95% of max for size, with some variation)
+idist[,1]=ceiling(z) #this rounds every z up to the nearest integer for the first time step  #
+#idist[,1] is the initial state -- better to use ceiling() than floor()#
+sizedist[,1]<- initialsize   #
+#stores number of survivors at each time#
+#
+reproduction=matrix(0, nindiv, Tmax) #stores how much they reproduce at each time. #
+ #draw random numbers for every individual's survival chance at every time (above or below exp(-mu))  #
+randraw=matrix(runif(nindiv*(Tmax), max=1, min=0), nrow=nindiv, ncol=Tmax)#
+ randraw2=matrix(runif(nindiv*(Tmax), max=1, min=0), nrow=nindiv, ncol=Tmax)
+i=1
+state <- idist[,i] #
+   size <- round(sizedist[,i])  #
+     EstoresmaxL <-scale*a*size^3*storelimit #adjusts stores to the max allowed for the mass at that length#
+     EcritL <-  scale*a*size^3*storemin   #
+        index <- which(state >= EcritL) #which individuals are still alive (didn't starve)
+Ilo <- floor(state[index]/scale)#
+  #these ifelse statemnts deal with the upper boundary on Estores (energetic state):#
+#find the allocation strategies of individuals of these states and age, regardless of   whether they survive  (since they behave first) #
+   Ilo <- ifelse(Ilo >= Estoresmax, Estoresmax-1, Ilo)   #
+   dx <- ifelse(Ilo >= Estoresmax, 1, state[index]/scale - Ilo) #
+      ##NOW WE NEED TO LOOK UP THE OPTIMAL BEHAVIORS FROM THE BACKWARD SOLUTION#
+      #CAREFULLY DEALING WITH THE CASE OF LOW STATE #
+      condind <- Ilo == 0
+g_allo[, i] <- 0
+repro[, i] <- 0
+Wstructure<- a*size[index]^3 #
+    Estructure <- Wstructure*scale#
+    Replim <- Estructure*reprolimit       #
+	Wstores<-state[index]/(scale)#
+	Wtotal <-  Wstores+Wstructure   #body mass
+reproduction[index, i]<- ifelse(repro[index, i]*state[index] < Replim, repro[index, i]*state[index], Replim)    #
+  nextsize <-   ((Wstructure +  g_allo[index,i]*Wstores)/a)^(1/3)#
+	survival <- randraw[index,i] <= exp(-mu[size[index]])   #
+	  critstores <- a*nextsize^3*storemin*scale
+Food<-sapply(ceiling(Wtotal), sto.food) #calculates stochastic food quantity for every index individual#
+ #####future state calculation:#
+	  survival2<- ifelse(((1-repro[index, i]-g_allo[index,i])*state[index] + Food - MTcosts[ceiling(Wtotal)])  > critstores, 1, 0) #check that future state will be greater than current EcritL #
+     idist[index,i+1] <- ifelse(survival+survival2==2, ((1-repro[index, i]-g_allo[index,i])*state[index] + Food - MTcosts[ceiling(Wtotal)]),  NA)#
+  sizedist[index, i+1] <- ifelse(survival+survival2==2,  nextsize, NA)   #
+  alive[group, i+1]=sum(idist[,i+1] > 0, na.rm=TRUE) #number of survivors#
+  income[, i] = Food
+Fod
+Food
+Food<-sapply(ceiling(Wtotal), sto.food) #calculates stochastic food quantity for every index individual#
+ #####future state calculation:#
+	  survival2<- ifelse(((1-repro[index, i]-g_allo[index,i])*state[index] + Food - MTcosts[ceiling(Wtotal)])  > critstores, 1, 0) #check that future state will be greater than current EcritL #
+     idist[index,i+1] <- ifelse(survival+survival2==2, ((1-repro[index, i]-g_allo[index,i])*state[index] + Food - MTcosts[ceiling(Wtotal)]),  NA)#
+  sizedist[index, i+1] <- ifelse(survival+survival2==2,  nextsize, NA)   #
+  alive[group, i+1]=sum(idist[,i+1] > 0, na.rm=TRUE) #number of survivors#
+  income[, i] = Food
+Food/scale
+list(wtd_size, coef(fitVB)[1]), coef(fitVB)[2]) )
+290:295
+seq(0.9, 5, by=0.1)
+L2 = seq(0.8, 4, by=0.2)
+length(L2)
+17*3
+w=1:1000000#
+ phi_p <- 0.07 #from table 2.2 in Andersen book#
+ f_0 <- 0.6 #somewhere between 0 and 1, but fish rarely caught with totally full stomach#
+ h <- 17.2 #coefficient on the consumption rate#
+ met_mort <- -0.25 #the argument in Andersen book is that mass-specific rates such as mortality scales with the metabolic esp of 3/4 (Brown et al. 2004). #
+ ###Sizespectra provide the other coefficients describing prey preference, encounter, consumption to predict mass-specific mortality:#
+ mu_w = phi_p*f_0*h*w^met_mort#
+ ### prey availability:#
+ phi_a <- 3 #from table 2.2#
+ K_c <- 8.82 #from table 2.2, this is averaged over "all" - so PP in stomach of all preds and preys have a MR of 1224 independently of body size#
+ lam <- 1.95 #
+ B_w = phi_a*K_c*w^(0.1) #
+plot(B_w, type="l", ylab = "Income")#
+focal_w#
+ss <- K_c*w^-2#
+#
+#pdf("~/Dropbox/Manuscripts in Progress/Life history of tunas/fig1_Jan2019.pdf")#
+plot(ss, type= "l", lwd = 2, xlab = "Body mass (kg)", ylab = "Relative number", las = 1, ylim=c(0, a0))#
+lines(x=c(focal_w, focal_w), y = c(0, ss[focal_w]), lwd = 3)#
+polygon(x=c(focal_w*p1, (focal_w*p1):(focal_w*p2), focal_w*p2), y= c(0, ss[(focal_w*p1):(focal_w*p2)], 0), col="light gray")#
+#
+polygon(x=c(focal_w/p2, (focal_w/p2):(focal_w/p1), focal_w/p1), y= c(0, ss[(focal_w/p2):(focal_w/p1)], 0), col="dark gray")#
+text(x=c(focal_w*(p1+0.7*p1),focal_w*(p2+0.7*p1), (focal_w/p2)+0.7*p1, (focal_w/p1)+0.7*p1), y=c(ss[focal_w*p1]+0.1*ss[focal_w*p1], ss[focal_w*p2]+0.2*ss[focal_w*p2], ss[focal_w/p2]+15, ss[focal_w/p1]+15), labels = c("P1*w", "P2*w", "w/P2", "w/P1"), cex=1)#
+dev.off()#
+plot(ss, type= "l", lwd = 2, xlab = "Body mass", ylab = "Relative abundance or biomass", las = 1, ylim=c(0, a0))#
+lines(x=c(focal_w, focal_w), y = c(0, ss[focal_w]), lwd = 3)#
+polygon(x=c(focal_w*p1, (focal_w*p1):(focal_w*p2), focal_w*p2), y= c(0, ss[(focal_w*p1):(focal_w*p2)], 0), col="light gray")#
+#
+polygon(x=c(focal_w/p2, (focal_w/p2):(focal_w/p1), focal_w/p1), y= c(0, ss[(focal_w/p2):(focal_w/p1)], 0), col="dark gray")#
+text(x=c(focal_w*(p1+0.7*p1),focal_w*(p2+0.7*p1), (focal_w/p2)+0.7*p1, (focal_w/p1)+0.7*p1), y=c(ss[focal_w*p1]+0.1*ss[focal_w*p1], ss[focal_w*p2]+0.2*ss[focal_w*p2], ss[focal_w/p2]+15, ss[focal_w/p1]+15), labels = c("P1*w", "P2*w", "w/P2", "w/P1"), cex=1)
+w=1:750#
+ phi_p <- 0.07 #from table 2.2 in Andersen book#
+ f_0 <- c(4, 8, 12) #somewhere between 0 and 1, but fish rarely caught with totally full stomach#
+ h <- 1 #coefficient on the consumption rate#
+ met_mort <- -0.25 #the argument in Andersen book is that mass-specific rates such as mortality scales with the metabolic esp of 3/4 (Brown et al. 2004). #
+ ###Sizespectra provide the other coefficients describing prey preference, encounter, consumption to predict mass-specific mortality:#
+P_w<-matrix(nrow = length(w), ncol=3)#
+#
+ for(i in 1:3) {#
+   P_w[, i] = phi_p*f_0[i]*h*w^met_mort#
+ }#
+#
+ matplot(P_w, type="l", ylab = "Per-month risk of predation",#
+         xlab="Mass (kg)", lty=1, lwd = c(1, 1.5, 2), col=c("darkblue", "blue", "light blue"))
+matplot(P_w, type="l", ylab = "Per-month risk of predation",#
+        xaxt="n" lty=1, lwd = c(1, 1.5, 2), col=c("darkblue", "blue", "light blue"))
+matplot(P_w, type="l", ylab = "Per-month risk of predation",#
+        xaxt="n", lty=1, lwd = c(1, 1.5, 2), col=c("darkblue", "blue", "light blue"))
+### prey availability:#
+ phi_a <- 3 #from table 2.2#
+ K_c <- c(2, 4, 8) #
+ lam <- 1.95 #
+ B_w<-matrix(nrow = length(w), ncol=3)#
+ for(i in 1:3) {#
+ B_w[, i] = phi_a*K_c[i]*w^(2-lam) #
+ }#
+matplot(B_w, type="l", ylab = "Income (kg/month)", xlab="Mass (kg)", lty=1, xaxt="n", lwd = c(1, 1.5, 2), col=c("black", "darkgrey", "grey"))
+matplot(P_w, type="l", ylab = "Per-month risk of predation",#
+        xaxt="n", lty=1, lwd = c(1, 1.5, 2), col=c("darkblue", "blue", "light blue"))
+k=1.3e-23#
+ E = 1.04e-19#
+ theta=0.66#
+ coef1  =5e+16 ##normalization constant puts tuna SMR in the same ballpark as the costs Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press.  #
+ Tau <- c(290, 295)#
+ C_w<- matrix(nrow = length(w), ncol=3)#
+#
+ for(i in 1:2) {#
+ C_w[, i] <- coef1*w^theta * exp(-E/(k*Tau[i]))#
+ }#
+ matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1, lwd = c(1, 1.5), col=c("dark red", "red"))
+k=1.3e-23#
+ E = 1.04e-19#
+ theta=0.66#
+ coef1  =5e+16 ##normalization constant puts tuna SMR in the same ballpark as the costs Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press.  #
+ Tau <- c(285, 290, 295, 300)#
+ C_w<- matrix(nrow = length(w), ncol=3)#
+#
+ for(i in 1:2) {#
+ C_w[, i] <- coef1*w^theta * exp(-E/(k*Tau[i]))#
+ }#
+ matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1, lwd = c(1, 1.5), col=c("brown", "dark red", "red", "violet"))
+matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,   col=c("brown", "dark red", "red", "violet"))
+k=1.3e-23#
+ E = 1.04e-19#
+ theta=0.66#
+ coef1  =5e+16 ##normalization constant puts tuna SMR in the same ballpark as the costs Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press.  #
+ Tau <- c(285, 290, 295, 300)#
+ C_w<- matrix(nrow = length(w), ncol=3)#
+#
+ for(i in 1:4) {#
+ C_w[, i] <- coef1*w^theta * exp(-E/(k*Tau[i]))#
+ }#
+ matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,   col=c("brown", "dark red", "red", "violet"))#
+ f_0 <- 8
+k=1.3e-23#
+ E = 1.04e-19#
+ theta=0.66#
+ coef1  =5e+16 ##normalization constant puts tuna SMR in the same ballpark as the costs Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press.  #
+ Tau <- c(285, 290, 295, 300)#
+ C_w<- matrix(nrow = length(w), ncol=4)#
+#
+ for(i in 1:4) {#
+ C_w[, i] <- coef1*w^theta * exp(-E/(k*Tau[i]))#
+ }#
+ matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,   col=c("brown", "dark red", "red", "violet"))
+matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,  lwd = c(1, 1.5, 2, 2.5), col=c("dark brown", "dark red", "red", "magenta"))
+matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,  lwd = c(1, 1.5, 2, 2.5), col=c("darkbrown", "dark red", "red", "magenta"))
+matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,  lwd = c(1, 1.5, 2, 2.5), col=c("maroon", "dark red", "red", "magenta"))
+matplot(C_w, type="l", ylab = "Monthly metabolic costs (J)",#
+         xlab="Mass (kg)", lty=1,  lwd = c(1, 1.5, 2, 2.5), col=c("dark red","maroon",  "red", "magenta"))
+matplot(B_w, type="l", ylab = "Income (kg/month)", xlab="Mass (kg)", lty=1, xaxt="n", lwd = c(1, 1.5, 2), col=c("black", "darkgrey", "grey"))
+### prey availability:#
+ phi_a <- 3 #from table 2.2#
+ K_c <- c(1, 5, 8) #
+ lam <- 1.95 #
+ B_w<-matrix(nrow = length(w), ncol=3)#
+ for(i in 1:3) {#
+ B_w[, i] = phi_a*K_c[i]*w^(2-lam) #
+ }#
+matplot(B_w, type="l", ylab = "Income (kg/month)",  lty=1, xaxt="n", lwd = c(1, 1.5, 2), col=c("black", "darkgrey", "grey"))
+w=1:750#
+  ### prey availability:#
+ phi_a <- 3 #from table 2.2#
+ K_c <- c(1, 5, 8) #
+ lam <- 1.95 #
+ B_w<-matrix(nrow = length(w), ncol=3)#
+ for(i in 1:3) {#
+ B_w[, i] = phi_a*K_c[i]*w^(2-lam) #
+ }#
+matplot(B_w, type="l", ylab = "Income (kg/month)",  lty=1, xaxt="n", lwd = c(1, 1.5, 2), col=c("black", "darkgrey", "grey"))#
+ phi_p <- 0.07 #from table 2.2 in Andersen book#
+ f_0 <- c(4, 8, 12) #somewhere between 0 and 1, but fish rarely caught with totally full stomach#
+ h <- 1 #coefficient on the consumption rate#
+ met_mort <- -0.25 #the argument in Andersen book is that mass-specific rates such as mortality scales with the metabolic esp of 3/4 (Brown et al. 2004). #
+ ###Sizespectra provide the other coefficients describing prey preference, encounter, consumption to predict mass-specific mortality:#
+P_w<-matrix(nrow = length(w), ncol=3)#
+#
+ for(i in 1:3) {#
+   P_w[, i] = exp(-phi_p*f_0[i]*h*w^met_mort)#
+ }#
+#
+ matplot(P_w, type="l", ylab = "Per-month probability of survival",#
+        xaxt="n", lty=1, lwd = c(1, 1.5, 2), col=c("darkblue", "blue", "light blue"))
+# install.packages("FSA")#
+# install.packages("nlstools")#
+#
+ # install.packages("ggplot2")#
+library(ggplot2)#
+#
+Tmax=18#
+time=1:(Tmax*12)#
+quartz()#
+windowframe=c(4,1)#
+par(mfrow=windowframe)#
+#
+plot_length <- function(data, filenames) {#
+  matplot(t(data[,-1]), type="l", main=substr(filenames, 23, 31), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")#
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  maxsize <- (min(which(as.numeric(data[1, (2:215)]) == max(as.numeric(data[1, (2:215)]))))) + 1 #
+  #print(data[1, maxsize])#
+   #age_m <- min(which(as.numeric(data[1, -1]) >= 0.5*as.numeric(data[1, maxsize])))/12 #
+   legend("topleft", legend=paste0("Lmax is ", data[1, maxsize], " cm"), bty="n")#
+   return(data[1, maxsize])#
+}#
+plot_repro <- function(repro_data,  repro_filenames) {#
+  matplot(t(repro_data[,-1]), type="l", main= substr(repro_filenames, 8, 23), col="red", lwd=1.75, lty=1,   #
+          ylab="Reproduction (J)",   xlab= "Age (years)", xaxt="n",  ylim=c(0, 5e+08), xlim=c(0.5, Tmax*12))#
+   #print(repro_data[1, -1])#
+  maxrepro <- max(as.numeric(repro_data[1, -1]), na.rm=TRUE) + 1 #
+   return(maxrepro)#
+}#
+# #
+fit_age <- 1:215 #note we are focused only on growth from 0.5 year to 18 years of age..... #
+# #
+# #
+#### now define functions to calculate reproduction#
+lifetimeR <-  function(reprodata, survdata, filenames) {#
+  data1 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))#
+  data2 <- survdata$x[-216]#
+  plot(data1[,2]*data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Reproductive value", xlab="Age (years)")#
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  TotalR <- sum(data1[,2]*data2)#
+  return(c(substr(filenames, 23, 31), TotalR) )#
+} #
+cumsurv <-  function(reprodata, survdata, filenames) {#
+  data1 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))#
+  data2 <- survdata$x[-216]*(survdata$x[-216]>=0.05)#
+  data2 <- ifelse(data2 == 0, NA, data2)#
+  # plot(data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Probability of survival to age", xlab="Age (years)")#
+  # axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  # #
+   return(data2)#
+} #
+calc_metrics <- function(data_files)#
+{#
+# ## read in files#
+#
+repro_filenames <-#
+  data_files[((length(data_files) / 4) + 1):(2 * (length(data_files) / 4))]#
+state_filenames <-#
+  data_files[(2 * (length(data_files) / 4) + 1):(3 * (length(data_files) /#
+                                                        4))]#
+length_filenames <- data_files[1:(length(data_files) / 4)]#
+surv_filenames <-#
+  data_files[(3 * (length(data_files) / 4) + 1):(4 * (length(data_files) /#
+                                                        4))]#
+#
+length_filenames <- unique(length_filenames)#
+repro_filenames <- unique(repro_filenames)#
+state_filenames <- unique(state_filenames)#
+surv_filenames <- unique(surv_filenames)#
+#
+length_data <- lapply(length_filenames, read.csv)#
+repro_data <- lapply(repro_filenames, read.csv)#
+state_data <- lapply(state_filenames, read.csv)#
+surv_data <- lapply(surv_filenames, read.csv)#
+x<- mapply(cumsurv,length_data, surv_data, length_filenames)#
+####create the dataframe summarizing the results of all metrics#
+# tabdata <- cbind(TempC,  food_tab2, maxlength,   maxR, lifetime_repro)#
+# colnames(tabdata) <-#
+#   c("Temp",    "kappa", "Max_length","survival", "Max_R", "lifetime_R")#
+# #
+   return(x)#
+}#
+#
+#  #
+# # #point to the files you want to compare#
+# setwd("~/Documents/tuna_theory_paper/results23Feb/285/")#
+# data_files285 <- list.files(pattern = "\\.csv$")#
+# tabdata1 <- calc_metrics(data_files285)#
+# quartz()#
+# matplot(tabdata1, type="l", lty=1, )#
+setwd("~/Documents/tuna_theory_paper/results23Feb/290/")#
+data_files290 <- list.files(pattern = "\\.csv$")#
+tabdata2 <- calc_metrics(data_files290)#
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival probability")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+#
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival probability")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "Survival probability")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+?abline
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, type = "2")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+#
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = "2")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+#
+quartz()#
+pal = gray.colors(11, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+# install.packages("FSA")#
+# install.packages("nlstools")#
+#
+ # install.packages("ggplot2")#
+library(ggplot2)#
+#
+Tmax=18#
+time=1:(Tmax*12)#
+quartz()#
+windowframe=c(4,1)#
+par(mfrow=windowframe)#
+#
+plot_length <- function(data, filenames) {#
+  matplot(t(data[,-1]), type="l", main=substr(filenames, 23, 31), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")#
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  maxsize <- (min(which(as.numeric(data[1, (2:215)]) == max(as.numeric(data[1, (2:215)]))))) + 1 #
+  #print(data[1, maxsize])#
+   #age_m <- min(which(as.numeric(data[1, -1]) >= 0.5*as.numeric(data[1, maxsize])))/12 #
+   legend("topleft", legend=paste0("Lmax is ", data[1, maxsize], " cm"), bty="n")#
+   return(data[1, maxsize])#
+}#
+plot_repro <- function(repro_data,  repro_filenames) {#
+  matplot(t(repro_data[,-1]), type="l", main= substr(repro_filenames, 8, 23), col="red", lwd=1.75, lty=1,   #
+          ylab="Reproduction (J)",   xlab= "Age (years)", xaxt="n",  ylim=c(0, 5e+08), xlim=c(0.5, Tmax*12))#
+   #print(repro_data[1, -1])#
+  maxrepro <- max(as.numeric(repro_data[1, -1]), na.rm=TRUE) + 1 #
+   return(maxrepro)#
+}#
+# #
+fit_age <- 1:215 #note we are focused only on growth from 0.5 year to 18 years of age..... #
+# #
+# #
+#### now define functions to calculate reproduction#
+lifetimeR <-  function(reprodata, survdata, filenames) {#
+  data1 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))#
+  data2 <- survdata$x[-216]#
+  plot(data1[,2]*data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Reproductive value", xlab="Age (years)")#
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  TotalR <- sum(data1[,2]*data2)#
+  return(c(substr(filenames, 23, 31), TotalR) )#
+} #
+cumsurv <-  function(reprodata, survdata, filenames) {#
+  data1 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))#
+  data2 <- survdata$x[-216]* #
+  data2 <- ifelse(data2 == 0, NA, data2)#
+  # plot(data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Probability of survival to age", xlab="Age (years)")#
+  # axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  # #
+   return(data2)#
+} #
+calc_metrics <- function(data_files)#
+{#
+# ## read in files#
+#
+repro_filenames <-#
+  data_files[((length(data_files) / 4) + 1):(2 * (length(data_files) / 4))]#
+state_filenames <-#
+  data_files[(2 * (length(data_files) / 4) + 1):(3 * (length(data_files) /#
+                                                        4))]#
+length_filenames <- data_files[1:(length(data_files) / 4)]#
+surv_filenames <-#
+  data_files[(3 * (length(data_files) / 4) + 1):(4 * (length(data_files) /#
+                                                        4))]#
+#
+length_filenames <- unique(length_filenames)#
+repro_filenames <- unique(repro_filenames)#
+state_filenames <- unique(state_filenames)#
+surv_filenames <- unique(surv_filenames)#
+#
+length_data <- lapply(length_filenames, read.csv)#
+repro_data <- lapply(repro_filenames, read.csv)#
+state_data <- lapply(state_filenames, read.csv)#
+surv_data <- lapply(surv_filenames, read.csv)#
+x<- mapply(cumsurv,length_data, surv_data, length_filenames)#
+####create the dataframe summarizing the results of all metrics#
+# tabdata <- cbind(TempC,  food_tab2, maxlength,   maxR, lifetime_repro)#
+# colnames(tabdata) <-#
+#   c("Temp",    "kappa", "Max_length","survival", "Max_R", "lifetime_R")#
+# #
+   return(x)#
+}#
+#
+#  #
+# # #point to the files you want to compare#
+# setwd("~/Documents/tuna_theory_paper/results23Feb/285/")#
+# data_files285 <- list.files(pattern = "\\.csv$")#
+# tabdata1 <- calc_metrics(data_files285)#
+# quartz()#
+# matplot(tabdata1, type="l", lty=1, )#
+setwd("~/Documents/tuna_theory_paper/results23Feb/290/")#
+data_files290 <- list.files(pattern = "\\.csv$")#
+tabdata2 <- calc_metrics(data_files290)#
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+#
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+# #
+# setwd("~/Documents/tuna_theory_paper/results23Feb/295/")#
+# data_files295 <- list.files(pattern = "\\.csv$")#
+# tabdata3 <- calc_metrics(data_files295)#
+# #
+# setwd("~/Documents/tuna_theory_paper/results23Feb/300/")#
+#  #
+# data_files300 <- list.files(pattern = "\\.csv$")#
+# tabdata4 <- calc_metrics(data_files300)#
+#  #
+#  alldata <- rbind(tabdata1, tabdata2, tabdata3, tabdata4)#
+# alldata <- as.data.frame(alldata)#
+# #
+# alldata$Max_size <- as.numeric(alldata$Max_length)#
+# alldata$kappa <- as.numeric(alldata$kappa)#
+# alldata$lifetime_R <- as.numeric(alldata$lifetime_R)#
+# alldata$Max_R <- as.numeric(alldata$Max_R)#
+#  #
+#  quartz()#
+#  ggplot(data = alldata,  aes(x = kappa, y = Max_size, group = as.factor(Temp))) +#
+#    geom_point(aes(color = as.factor(Temp)), shape = 21, size = 4) +       #
+#    #
+#    scale_color_manual(values = alpha(c("#018571", "#80CDC1", "#DFC27D", "#A6611A" ), 0.85), name = "Temp (C)" ) + #
+#     #
+#    #
+#    ylim(c(0, 300)) +#
+#    ylab("Maximum length (cm)")   +#
+#    scale_x_continuous(expression(kappa), 1:10, 1:10) +#
+#    theme_bw()#
+#   #
+# #
+#  #
+#  ggplot(data = alldata,  aes(x = kappa, y = lifetime_R, group = as.factor(Temp))) +#
+#    geom_point(aes(color = as.factor(Temp)), shape = 21, size = 4)  +#
+#    scale_color_manual(values = alpha(c("#018571", "#80CDC1", "#DFC27D", "#A6611A" ), 0.85), name = "Temp (C)") + #
+#    scale_x_continuous(expression(kappa), 1:10, 1:10) +#
+#    #
+#    ylab("Expected Lifetime Reproduction (kg)")   +#
+#    theme_bw()#
+#  #
+#   #alldata
+setwd("~/Documents/tuna_theory_paper/results23Feb/290/")#
+data_files290 <- list.files(pattern = "\\.csv$")#
+tabdata2 <- calc_metrics(data_files290)#
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+#
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+# #
+# setwd("~/Documents/tuna_theory_paper/results23Feb/295/")#
+# data_files295 <- list.files(pattern = "\\.csv$")#
+# tabdata3 <- calc_metrics(data_files295)#
+# #
+# setwd("~/Documents/tuna_theory_paper/results23Feb/300/")#
+#  #
+# data_files300 <- list.files(pattern = "\\.csv$")#
+# tabdata4 <- calc_metrics(data_files300)#
+#  #
+#  alldata <- rbind(tabdata1, tabdata2, tabdata3, tabdata4)#
+# alldata <- as.data.frame(alldata)#
+# #
+# alldata$Max_size <- as.numeric(alldata$Max_length)#
+# alldata$kappa <- as.numeric(alldata$kappa)#
+# alldata$lifetime_R <- as.numeric(alldata$lifetime_R)#
+# alldata$Max_R <- as.numeric(alldata$Max_R)#
+#  #
+#  quartz()#
+#  ggplot(data = alldata,  aes(x = kappa, y = Max_size, group = as.factor(Temp))) +#
+#    geom_point(aes(color = as.factor(Temp)), shape = 21, size = 4) +       #
+#    #
+#    scale_color_manual(values = alpha(c("#018571", "#80CDC1", "#DFC27D", "#A6611A" ), 0.85), name = "Temp (C)" ) + #
+#     #
+#    #
+#    ylim(c(0, 300)) +#
+#    ylab("Maximum length (cm)")   +#
+#    scale_x_continuous(expression(kappa), 1:10, 1:10) +#
+#    theme_bw()#
+#   #
+# #
+#  #
+#  ggplot(data = alldata,  aes(x = kappa, y = lifetime_R, group = as.factor(Temp))) +#
+#    geom_point(aes(color = as.factor(Temp)), shape = 21, size = 4)  +#
+#    scale_color_manual(values = alpha(c("#018571", "#80CDC1", "#DFC27D", "#A6611A" ), 0.85), name = "Temp (C)") + #
+#    scale_x_continuous(expression(kappa), 1:10, 1:10) +#
+#    #
+#    ylab("Expected Lifetime Reproduction (kg)")   +#
+#    theme_bw()#
+#  #
+#   #alldata
+cumsurv <-  function(reprodata, survdata, filenames) {#
+  data1 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))#
+  data2 <- survdata$x[-216]  #
+  data2 <- ifelse(data2 == 0, NA, data2)#
+  # plot(data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Probability of survival to age", xlab="Age (years)")#
+  # axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))#
+  # #
+   return(data2)#
+}
+calc_metrics <- function(data_files)#
+{#
+# ## read in files#
+#
+repro_filenames <-#
+  data_files[((length(data_files) / 4) + 1):(2 * (length(data_files) / 4))]#
+state_filenames <-#
+  data_files[(2 * (length(data_files) / 4) + 1):(3 * (length(data_files) /#
+                                                        4))]#
+length_filenames <- data_files[1:(length(data_files) / 4)]#
+surv_filenames <-#
+  data_files[(3 * (length(data_files) / 4) + 1):(4 * (length(data_files) /#
+                                                        4))]#
+#
+length_filenames <- unique(length_filenames)#
+repro_filenames <- unique(repro_filenames)#
+state_filenames <- unique(state_filenames)#
+surv_filenames <- unique(surv_filenames)#
+#
+length_data <- lapply(length_filenames, read.csv)#
+repro_data <- lapply(repro_filenames, read.csv)#
+state_data <- lapply(state_filenames, read.csv)#
+surv_data <- lapply(surv_filenames, read.csv)#
+x<- mapply(cumsurv,length_data, surv_data, length_filenames)#
+####create the dataframe summarizing the results of all metrics#
+# tabdata <- cbind(TempC,  food_tab2, maxlength,   maxR, lifetime_repro)#
+# colnames(tabdata) <-#
+#   c("Temp",    "kappa", "Max_length","survival", "Max_R", "lifetime_R")#
+# #
+   return(x)#
+}#
+#
+#  #
+# # #point to the files you want to compare#
+# setwd("~/Documents/tuna_theory_paper/results23Feb/285/")#
+# data_files285 <- list.files(pattern = "\\.csv$")#
+# tabdata1 <- calc_metrics(data_files285)#
+# quartz()#
+# matplot(tabdata1, type="l", lty=1, )#
+setwd("~/Documents/tuna_theory_paper/results23Feb/290/")#
+data_files290 <- list.files(pattern = "\\.csv$")#
+tabdata2 <- calc_metrics(data_files290)#
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))#
+#
+quartz()#
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(tabdata2, type="l", xaxt="n",col= pal, ylim=c(0, 1), lty=1, xlab = "Age (years)", ylab = "Survival to age")#
+abline(h=0.05, lty = 2)#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
+pal = gray.colors(12, start=0.8, end=0.3)#
+matplot(log(tabdata2), type="l", xaxt="n",col= pal,   lty=1, xlab = "Age (years)", ylab = "ln(Survival to age)")#
+abline(h=log(0.05), lty = 2)#
+#
+axis(1, at = seq(0, (17)*12, by=12), labels = (seq(0, 17, by=1)))
