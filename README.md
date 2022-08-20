@@ -1,5 +1,5 @@
 # size-spectra-life-history
-This file contains the model code and output for the Kindsvater et al. Fear and foraging in the ecosystem size spectrum generate diversity in fish life histories. The manuscript was posted on BioArxiv on 20 August 2022.
+This file contains the model code and output for  Kindsvater et al. Fear and foraging in the ecosystem size spectrum generate diversity in fish life histories. The manuscript was posted on BioArxiv on 20 August 2022.
 
 The authors are: 
 
