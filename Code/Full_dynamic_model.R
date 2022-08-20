@@ -4,7 +4,7 @@
 # library(fields)
  
  
-filepath <- "/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/Results_Supp_Fig5/"
+filepath <- "/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/Results_Supp_Fig5/"
  
 seasons = "NO"
 
@@ -12,8 +12,8 @@ seasons = "NO"
  timebin=12
  f_h <- 8/timebin
  Temp <- 290
- reprolimit=0.3
- Kappa = 12/timebin
+ reprolimit=0.1
+ Kappa = 8/timebin
  Tmax = 18*timebin  #monthly time steps, maximum lifespan is 18 years
  
 #Parameters for temperature dependent costs
