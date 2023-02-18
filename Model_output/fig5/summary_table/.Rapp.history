@@ -1,0 +1,5 @@
+setwd("/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/fig6/summary_table")#
+      data_files <- list.files(pattern = "\\.csv$")
+setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/fig6/summary_table")#
+      data_files <- list.files(pattern = "\\.csv$")
+data_files

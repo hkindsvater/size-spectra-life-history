@@ -4,7 +4,7 @@
 # library(fields)
  
  
-filepath <- "/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/Results_Supp_Fig5/"
+filepath <- "~/size-spectra-life-history/"
  
 seasons = "NO"
 
@@ -12,8 +12,8 @@ seasons = "NO"
  timebin=12
  f_h <- 8/timebin
  Temp <- 290
- reprolimit=0.1
- Kappa = 8/timebin
+ reprolimit=0.2
+ Kappa = 2/timebin
  Tmax = 18*timebin  #monthly time steps, maximum lifespan is 18 years
  
 #Parameters for temperature dependent costs
@@ -23,7 +23,7 @@ theta=0.66
  coef1  =5e+16 ##normalization constant puts tuna SMR near the costs in Kitchell et al. (1978) Bioenergetic spectra of skipjack and yellowfin tunas, pp 359 IN Sharp G.D. and Dizon A.E. eds. The Physiological Ecology of Tunas, Academic press.  
 
 #physiological parameters
-a <- 5e-5 #from ICCAT 2015 BFT length-weight relationship
+a <- 1e-5 #from Lombardo et al. 2019
 Jdensity <-  4.2e+6 #J/kg #from Chapman et al. 2011
 b=1.8
 d = 2.4
@@ -37,7 +37,6 @@ Yindexmax <- 100 #maximum index of stores in state loop
 storemax= 0.6 #proportion of structural mass that individuals can devote to energy storage
 storemin = 0.1
  
-thresholdsize <- 20
 ###################################################################################################################################################################################################
 ###Lookup Tables - look up costs and food functions so they are not calculated every time
 
@@ -79,24 +78,12 @@ MTcosts = matrix(nrow = timebin, ncol = length(Mass))
 
 for (kap in 1:timebin) {
   
-  Income[kap, ] <- kmult[kap]*Kappa*phi_a*K_c*Mass^(2-lam) #this describes the scaling with size and ecostystem richness
+  Income[kap, ] <- kmult[kap]*Kappa*3*Mass^(0.05) #this describes the scaling with size and ecostystem richness
   MTcosts[kap, ] <-coef1*(Mass)^theta*(exp(-E/(k*(Temp+raiseT[kap])))) 
   
 }
 
-###Plot to check
- # plot(MTcosts[7, ], type="l", ylab="Monthly Metabolic Costs (J)", xaxt="n", lwd=5, ylim=c(0, 2600000), col=4)
-# plot(MTcosts[7, ], type="l", ylab="Monthly Metabolic Costs (J)", xaxt="n", lwd=5, ylim=c(0, 7800000), col=4)
-# lines(MTcosts[1, ], lty=1, col=1, lwd=2)
-# plot(MTcosts[7, ], type="l", ylab="Monthly Metabolic Costs (J)", xaxt="n", lwd=5, ylim=c(0, 7800000), col=1)
-# lines(MTcosts[1, ], lty=1, col=2, lwd=2)
-# Income = Kappa*phi_a*K_c*Mass^(2-lam) #this describes the scaling with size and ecostystem richness
-#   
-#  plot(Income)
-#  
-# ###plot metabolic cost functions for each temp to check they are sensible
- #  matplot( ((1:length(Mass))), t((MTcosts)), type = "l", lty=1, lwd=2,   xlab=" (Mass (kg))", ylab="Metabolic rate in J/season", col=c(4, 3, "orange", 2, "dark red"))    
-#################################################################################################################################################################################################
+# ##############################################################################################################################################################################################
 
 
 #DYNAMIC MODEL: life history in a single environment (phi = 1)
@@ -264,8 +251,7 @@ Y <- 1
  
  
 ###Plotting code to make plots like that in main text Figure 3
-
-# quartz()
+ dev.new(height = 8, width = 8, unit="in")
 # par(mfrow=c(3,2))
 # gcol=     c("orange", two.colors(n=10, start="white", middle="gray", end="black"))
 #      
@@ -283,16 +269,16 @@ Y <- 1
 # 
 # 
 # 
-# image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,100, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 100 cm")       
-# 
-# image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,100, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 100 cm")        
-# 
-# 
-# 
-# image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,200, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 200 cm")       
-# 
-# image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,200, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 200 cm")        
-# 
+image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,100, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 100 cm")       
+
+image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,100, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 100 cm")        
+
+
+
+image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,200, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 200 cm")       
+
+image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,200, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 200 cm")        
+
 
 
 
