@@ -157,9 +157,9 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
    ylab("Expected Lifetime Reproduction (kg)")   +
    theme_bw()
  
- alldata$lifetime_R <- alldata$lifetime_R/Jdensity
- 
- write.csv(alldata, file="suppTable2.csv")
+ alldata$lifetime_R <- round(alldata$lifetime_R/Jdensity,2)
+ alldata2 <- alldata[, -c(3,4)]
+ write.csv(alldata2, file="suppTable1.csv")
   
  
  

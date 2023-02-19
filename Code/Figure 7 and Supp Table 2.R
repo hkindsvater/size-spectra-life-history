@@ -248,7 +248,7 @@ datatable2 <- rbind(alldata5, alldata2, alldata6, alldata4)
 datatable2$env <- c(rep("Constant", 4), rep("Seasonality - K only", 4), rep("Seasonality - T only", 4), rep("Seasonality", 4)  )
 datatable2$kappa[c(4, 12)]<- c(2.5, 2.5)
 datatable3 <- datatable2[,-c(1, 4:6)] 
-  write.csv(datatable3, file="tableS1.csv")
+  write.csv(datatable3, file="SuppTable2.csv")
 
 
 

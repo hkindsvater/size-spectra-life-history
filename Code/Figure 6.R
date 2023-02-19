@@ -94,24 +94,42 @@ RV<-mapply(lifetimeR, repro_data, surv_data, length_filenames)
  
 lifespan <- mapply(maxage, surv_data, length_filenames) 
  lifespan[1]<- 18*12  #bluefin tuna lives past the maximum time (18 years) so we need to replace infinite lifespan
- R[, 2] <- R[,2]/ 4.2e+6 #need to convert this file from J to KG
+ #R[, 2] <- R[,2]/ 4.2e+6 #need to convert this file from J to KG
  quartz()
+ par(mfrow =c(1, 3), mar = c(3, 4, 1, 2), oma = c(1,2,0,2),   family = "sans", las=1)
  # note that in the text figure, reproductive data axes are manually adjusted, and the bluefin tuna reproductive output is plotted without the loess (type = "l").  
-  for (i in 1:3) {
+  for (i in 3:1) {
   
   L[lifespan[i]:(Tmax*12), i] <- NA
   R[lifespan[i]:(Tmax*12), i] <- NA
   
-  par(mfrow =c(2, 1), mar = c(3, 4, 1, 2), oma = c(1,2,0,2),   family = "sans", las=1)
+   
   # maxL <- max(max(as.numeric(L[, i]), na.rm=T), 230)
   plot( 1:(Tmax*12), as.numeric(L[, i]), type="l", col=1, lwd=3, ylim=c(0, 375), las=1, ylab="Length (cm)",   xlim=c(0.5, Tmax*12), xlab= "", xaxt="n")
   axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+    
+  
+  }
+ 
+ quartz()
+ 
+ #plot first two panels using lowess
+ par(mfrow =c(1, 3), mar = c(3, 4, 1, 2), oma = c(1,2,0,2),   family = "sans", las=1)
+ # note that in the text figure, reproductive data axes are manually adjusted, and the bluefin tuna reproductive output is plotted without the loess (type = "l").  
+ for (i in 3:2) {
    
-   maxR <- max(R[,i]+5, na.rm=T)
-    plot( 1:(Tmax*12), as.numeric(R[, i]), type="l",  lwd=3, lty=1,  las=1,   ylab="Reproductive output (kg)", ylim=c(0, maxR), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")
-  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
-   #lines(lowess(1:(lifespan[i]-1), R[1:lifespan[i]-1, i],  f = .45), lwd=3, col=1)
+   L[lifespan[i]:(Tmax*12), i] <- NA
+   R[lifespan[i]:(Tmax*12), i] <- NA
+   
+   maxR <- c(NA, 4, 1)
+    plot( 1:(Tmax*12), as.numeric(R[, i]), type="n",  lwd=3, lty=1,  las=1,   ylab="Reproductive output (kg)", ylim=c(0, maxR[i]), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)), xlab = "Age (years)")
+   lines(lowess(1:(lifespan[i]-1), R[1:lifespan[i]-1, i],  f = .45), lwd=3, col=1)
      
    }
    
-   
+ #plot third panel without lowess
+ plot( 1:(Tmax*12), as.numeric(R[, 1]), type="l",  lwd=3, lty=1,  las=1,   ylab="Reproductive output (kg)", ylim=c(0, 50), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")
+ axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)), xlab= "Age (years)")
+ #lines(lowess(1:(lifespan[i]-1), R[1:lifespan[i]-1, i],  f = .45), lwd=3, col=1)
+ 
