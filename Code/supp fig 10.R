@@ -7,24 +7,23 @@ library(ggplot2)
 Tmax=18
 time=1:(Tmax*12)
 quartz()
-windowframe=c(4,1)
+windowframe=c(2,1)
  
 par(mfrow=windowframe)
 
 
+Jdensity <-  4.2e+6 
 ##Define functions
 plot_length <- function(data, filenames) {
   
   
-  matplot(t(data[,-1]), type="l", main=substr(filenames, 36, 40), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")
-  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+  #matplot(t(data[,-1]), type="l", main=substr(filenames, 36, 40), col="darkgray", lwd=1.75, lty=1,  ylab="Length (cm)", ylim=c(0, 400), xlim=c(0.5, Tmax*12), xlab= "Age (years)", xaxt="n")
+ # axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
   
   maxsize <- (min(which(as.numeric(data[1, (2:215)]) == max(as.numeric(data[1, (2:215)]), na.rm =TRUE)))) + 1 
-  #print(data[1, maxsize])
-   #age_m <- min(which(as.numeric(data[1, -1]) >= 0.5*as.numeric(data[1, maxsize])))/12 
-  
+   
     
-   legend("topleft", legend=paste0("Lmax is ", data[1, maxsize], " cm"), bty="n")
+   #legend("topleft", legend=paste0("Lmax is ", data[1, maxsize], " cm"), bty="n")
    return(data[1, maxsize])
    
    
@@ -32,8 +31,8 @@ plot_length <- function(data, filenames) {
 
 
 plot_repro <- function(repro_data,  repro_filenames) {
-  matplot(t(repro_data[,-1]), type="l", main= substr(repro_filenames, 8, 23), col="red", lwd=1.75, lty=1,   
-          ylab="Reproduction (J)",   xlab= "Age (years)", xaxt="n",  ylim=c(0, 5e+08), xlim=c(0.5, Tmax*12))
+  #matplot(t(repro_data[,-1]), type="l", main= substr(repro_filenames, 8, 23), col="red", lwd=1.75, lty=1,   
+          #ylab="Reproduction (J)",   xlab= "Age (years)", xaxt="n",  ylim=c(0, 5e+08), xlim=c(0.5, Tmax*12))
    #print(repro_data[1, -1])
   maxrepro <- max(as.numeric(repro_data[1, -1]), na.rm=TRUE) + 1 
  
@@ -52,25 +51,52 @@ lifetimeR <-  function(reprodata, survdata, filenames) {
   
   data2 <- survdata$x[-216]
    
-  plot(data1[,2]*data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Reproductive value", xlab="Age (years)")
-  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+  #plot(data1[,2]*data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Reproductive value", xlab="Age (years)")
+   # axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
   
   TotalR <- sum(data1[,2]*data2)
   return(c(substr(filenames, 23, 31), TotalR) )
 } 
+
 cumsurv <-  function(reprodata, survdata, filenames) {
   
   data1 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))
   
-  data2 <- survdata$x[-216]
+  data2 <- ifelse(survdata$x[-216]>0.03, 1, 0)
   
-  plot(data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Probability of survival to age", xlab="Age (years)")
-  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+  #plot(data2, type="l",main=substr(filenames, 23, 31), xaxt="n", lwd=3,ylim=c(0, 5e+07), xlim=c(0.5, Tmax*12), ylab="Probability of survival to age", xlab="Age (years)")
+  #axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
   
    
 } 
 
-
+rep
+a=1e-05*Jdensity
+plotstate <- function(statedata, filenames, survdata, lengthdata, reprodata) {
+  data2 <- ifelse(survdata$x[-216]> 0, 1, 0)
+  data1 <- (as.data.frame(t(rbind(fit_age, statedata[1, 1:215]))*data2))
+  
+  
+  
+  data3 <- (as.data.frame(t(rbind(fit_age, lengthdata[1, 1:215]))*data2))
+  
+    roundL <- floor(data3[,2])
+      
+        for (j in 1:length(na.omit(data1[,2])>0) ){
+            costs[j] <-  MTcosts[1, roundL[j]]
+     }
+      
+  data4 <- (as.data.frame(t(rbind(fit_age, reprodata[1, 1:215]))))
+   totalbudget <-as.data.frame(data1[,2]+data4[,2]+costs)
+   
+ 
+  plot(1:215, t(totalbudget), type="l",main=substr(filenames, 32, 45), xaxt="n", lwd=3,   ylab="State", xlab="Age (years)", ylim=c(0, 1.5e+8))
+  axis(1, at = seq(0, (Tmax)*12, by=12), labels = (seq(1, Tmax+1, by=1)))
+   #points(data1[,2],  pch=8)
+   lines((a*data3[, 2]^3)*0.6*Jdensity, col="red")
+   lines((a*data3[,2]^3)*0.2*Jdensity, col= "blue")
+   lines((a*data3[,2]^3)*0.1*Jdensity, col= "brown", lwd=2)
+}
 
 ##define wrapper function to calculate summary data for each temperature
 calc_metrics <- function(data_files)
@@ -116,6 +142,9 @@ repro_results <-
   mapply(lifetimeR, repro_data, surv_data, length_filenames)
 lifetime_repro <- as.numeric(repro_results[2, ]) 
 
+state_results <- mapply(plotstate, state_data, state_filenames, surv_data, length_data, repro_data)
+  
+
 ####create the dataframe summarizing the results of all metrics
 tabdata <- cbind(TempC,  rep(kappa, 2), maxlength, maxR, lifetime_repro)
 colnames(tabdata) <-
@@ -144,6 +173,8 @@ alldata1<- alldata[alldata$Temp <= 17, ]  #with seasonality in breeding season l
  
 setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna")
 data_files <- list.files(pattern = "\\.csv$")
+
+quartz()
 tabdata  <- calc_metrics(data_files)
 
 alldata <- as.data.frame(tabdata)
@@ -178,7 +209,6 @@ p1 <- ggplot(data = datatable,  aes(x = kappa, y = Max_size, group = as.factor(e
   
 p1
 
-Jdensity <-  4.2e+6 
 datatable$repro_inkg <- datatable$lifetime_R/Jdensity
 ggplot(data = datatable,  aes(x = kappa, y = repro_inkg, group = as.factor(env))) +
   geom_point(aes(color = as.factor(Temp), shape = as.factor(env)),  size = 3) +        

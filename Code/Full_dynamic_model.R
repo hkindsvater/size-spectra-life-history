@@ -11,7 +11,7 @@ seasons = "NO"
 #Environmental Parameters
  timebin=12
  f_h <- 8/timebin
- Temp <- 290
+ Temp <- 300
  reprolimit=0.2
  Kappa = 2/timebin
  Tmax = 18*timebin  #monthly time steps, maximum lifespan is 18 years
