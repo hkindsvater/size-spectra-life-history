@@ -11,7 +11,7 @@ seasons = "NO"
 #Environmental Parameters
  timebin=12
  f_h <- 8/timebin
- Temp <- 300
+ Temp <- 290
  reprolimit=0.2
  Kappa = 2/timebin
  Tmax = 18*timebin  #monthly time steps, maximum lifespan is 18 years
@@ -44,8 +44,7 @@ storemin = 0.1
   #total mass maximum in kg
 ##Prey availability   
 phi_a <- 3 #from table 2.2 in Andersen book
-lam <- 1.95
-K_c=10 #from Table 2.2, this changes with season (and is scaled by Kappa)
+ K_c=10 #from Table 2.2, this changes with season (and is scaled by Kappa)
 ##mass dependent mortality
  phi_p <- 0.07 #from table 2.2 in Andersen book
 f_0 <- 0.6 #somewhere between 0 and 1, but predators rarely caught with totally full stomach
