@@ -85,8 +85,8 @@ for (kap in 1:timebin) {
 # ##############################################################################################################################################################################################
 
 
-#DYNAMIC MODEL: life history in a single environment (phi = 1)
-
+#DYNAMIC MODEL: optimal life history in a single environment 
+ 
 #dynamic behaviors
 u <-  seq(0, 1, by = 0.1) #fraction stored (rest allocated to structure)
 
@@ -250,33 +250,18 @@ Y <- 1
  
  
 ###Plotting code to make plots like that in main text Figure 3
- dev.new(height = 8, width = 8, unit="in")
-# par(mfrow=c(3,2))
-# gcol=     c("orange", two.colors(n=10, start="white", middle="gray", end="black"))
-#      
-# image.plot(1:Lmax, 1:Yindexmax, t(optU[,, 1,1]),     ylab="State", xlab="Length", main="growth")       
-# 
-# image.plot(1:Lmax, 1:Yindexmax, t(optR[,, 1,1]),     ylab="State", xlab="Length", main="reproduction")       
-# 
-# image.plot(1:Lmax, 1:Yindexmax, t(optU[,, 1,(Tmax-20)]),      ylab="State", xlab="Length", main="growth Tmax-20")       
-# 
-# image.plot(1:Lmax, 1:Yindexmax, t(optR[,, 1,(Tmax-20)]),    ylab="State", xlab="Length", main="reproduction Tmax-20")       
-# 
-# image.plot(1:Lmax, 1:Yindexmax, t(optU[,, 1,(Tmax-1)]),     ylab="State", xlab="Length", main="growth")       
-# 
-# image.plot(1:Lmax, 1:Yindexmax, t(optR[,, 1,(Tmax-1)]),     ylab="State", xlab="Length", main="reproduction")        
-# 
-# 
-# 
-image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,100, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 100 cm")       
+ # dev.new(height = 8, width = 8, unit="in")
+  # par(mfrow=c(3,2))
+ 
+# image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,100, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 100 cm")       
 
-image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,100, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 100 cm")        
+# image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,100, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 100 cm")        
 
 
 
-image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,200, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 200 cm")       
+# image.plot( 1:(Tmax-1), 1:Yindexmax, t(optU[,200, 1,]),     ylab="State", xlab="Age (months)", main="growth for L = 200 cm")       
 
-image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,200, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 200 cm")        
+# image.plot(  1:(Tmax-1), 1:Yindexmax, t(optR[,200, 1,]),     ylab="State", xlab="Age (months)", main="reproduction for L = 200 cm")        
 
 
 

@@ -65,9 +65,7 @@ maxage<-  function(survdata, filenames) {
   
   
 #point to the files you want to compare
-
-
-    setwd("~/size-spectra-life-history/Model_output/fig5/summary_table")
+    setwd("~/size-spectra-life-history/Model_output/fig4")
  data_files <- list.files(pattern = "\\.csv$")
 
 # 

@@ -127,7 +127,7 @@ colnames(tabdata) <-
  
 #point to the files you want to compare
 
-    setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/fig5/summary_table2")
+    setwd("~/size-spectra-life-history/Model_output/fig5/summary_table")
       data_files <- list.files(pattern = "\\.csv$")
  tabdata  <- calc_metrics(data_files)
  
@@ -140,7 +140,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata1<- alldata
 
-setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/seasKonly/summary_table")
+setwd("~/size-spectra-life-history/Model_output/seasonal_results/seasKonly/summary_table")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -155,7 +155,7 @@ alldata2<- alldata #with seasonality in K only
 
 
 
-setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/seasTonly/summary_table")
+setwd("~/size-spectra-life-history/Model_output/seasonal_results/seasTonly/summary_table")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -169,7 +169,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 alldata3 <- alldata #withseasonality in T only
 
 
-setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/summary_table")
+setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna/summary_table")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -182,7 +182,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata4 <- alldata #with seasonality in both T and K 
  
-setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/baselineSens")
+setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna/baselineSens")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -195,7 +195,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata5 <- alldata #alternative values for  K
 
-setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/seasTonlySens")
+setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna/seasTonlySens")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 

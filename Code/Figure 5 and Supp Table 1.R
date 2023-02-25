@@ -1,5 +1,4 @@
-# install.packages("FSA")
-# install.packages("nlstools")
+
 
  # install.packages("ggplot2")
 library(ggplot2)
@@ -124,7 +123,7 @@ colnames(tabdata) <-
  
 #point to the files you want to compare
 
-    setwd("/Users/hkindsvater/Documents/size-spectra-life-history/Model_output/fig5")
+    setwd("~/size-spectra-life-history/Model_output/fig5")
       data_files <- list.files(pattern = "\\.csv$")
  tabdata  <- calc_metrics(data_files)
  

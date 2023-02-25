@@ -106,7 +106,7 @@ x<- mapply(cumsurv,length_data, surv_data, length_filenames)
 #  
  
  
-setwd("~/Documents/size-spectra-life-history/Model_output/fig5/summary_table")
+setwd("~/size-spectra-life-history/Model_output/fig5/summary_table")
 data_files290 <- list.files(pattern = "\\.csv$")
 tabdata2 <- calc_metrics(data_files290)
 

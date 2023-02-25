@@ -126,7 +126,7 @@ colnames(tabdata) <-
  
 #point to the files you want to compare
 
-    setwd("/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/suppfig10")
+    setwd("~/size-spectra-life-history/Model_output/suppfig10")
       data_files <- list.files(pattern = "\\.csv$")
  tabdata  <- calc_metrics(data_files)
  
@@ -141,7 +141,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 alldata1<- alldata[alldata$Temp <= 17, ]  #with seasonality in breeding season lasting 6 months, not 3
 
  
-setwd("/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna")
+setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna")
 data_files <- list.files(pattern = "\\.csv$")
 
 quartz()
@@ -159,7 +159,7 @@ alldata2 <- alldata[alldata$Temp <= 17, ] #with seasonality in both T and K
 
 
  
-setwd("/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/suppfig10/unconstrainedR")
+setwd("~/size-spectra-life-history/Model_output/suppfig10/unconstrainedR")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
