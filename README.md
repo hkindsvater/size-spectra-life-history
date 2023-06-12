@@ -1,8 +1,8 @@
-# Code and model output from: Fear and foraging in the ecosystem size spectrum generate diversity in fish life histories
+# Code and model output from: Fear and foraging opportunities interact with temperature and seasonality to drive diversity in fish life histories 
 
 ------------------------------------------------------------------------
 
-These folders represent the model output ("data") produced with the dynamic programming method described in the accompanying manuscript under review at the American Naturalist. The data in each figure were analyzed with the included .R scripts, with names corresponding to each figure.
+These folders represent the model output ("data") produced with the dynamic programming method described in the accompanying manuscript. The data in each figure were analyzed with the included .R scripts, with names corresponding to each figure.
 
 ### Description of the data and file structure
 

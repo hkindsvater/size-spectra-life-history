@@ -75,6 +75,8 @@ for (kap in 1:timebin) {
   
 }
 
+ 
+
 ###Plot vs mass (Fig 1A - 1C)
 kappas <- c(  0.5, 2, 4)
 kap_inc <- matrix(nrow = length(kappas), ncol = length(Mass))
@@ -84,7 +86,7 @@ for (kp in 1:length(kappas)) {
  kap_inc[kp, ] <- kappas[kp]*3*Mass^(0.05)
 }
 
- dev.new(width=4, height=4, unit="in")
+  
 matplot( Mass, t(kap_inc), type = "l", las = 1,lty=1, lwd=2,   xlab="Mass (kg)", ylab = "Income (kg/month)", col = c("light green", "green", "dark green"))
         
  
@@ -95,9 +97,9 @@ for (h in 1:length(hseq) ) {
   mu_h[h, ] <- phi_p*(hseq[h])*Mass^met_mort 
   
 }
-   dev.new(width=4, height=4, unit="in")
+   
 
-  matplot( Mass, t(1-exp(-mu_h)), type = "l", las = 1, lty=1, lwd=2, ylim = c(0,1), xlab="Mass (kg)", ylab = "Annual extrinsic mortality", col = c("light blue", "blue", "dark blue"))
+  matplot( Mass, t(exp(-mu_h)), type = "l", las = 1, lty=1, lwd=2, ylim = c(0,1), xlab="Mass (kg)", ylab = "Survival", col = c("light blue", "blue", "dark blue"))
   #ylab="Metabolic rate in J/season", col=c(4, 3, "orange", 2, "dark red")))
 
 
@@ -112,9 +114,8 @@ for (h in 1:length(hseq) ) {
     
   }
   
-   dev.new(width=4, height=4, unit="in")
+  
 
-
-  matplot(Mass, t((temp_mat)), type = "l",las = 1, lty=1, lwd=2,  xlab="Mass (kg)", ylab="Metabolic requirements in J/month", col=c("orange", "red", "dark red", "#301934") )  
+  matplot(Mass, t((temp_mat)), type = "l",  lty=1, lwd=2,  xlab="Mass (kg)", ylab="Metabolic requirements in J/month", col=c("orange", "red", "dark red", "#301934") )  
   
           

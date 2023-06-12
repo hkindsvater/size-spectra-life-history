@@ -127,7 +127,7 @@ colnames(tabdata) <-
  
 #point to the files you want to compare
 
-    setwd("~/size-spectra-life-history/Model_output/fig5/summary_table")
+    setwd("~/Documents/size-spectra-life-history/Model_output/fig5/summary_table")
       data_files <- list.files(pattern = "\\.csv$")
  tabdata  <- calc_metrics(data_files)
  
@@ -140,7 +140,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata1<- alldata
 
-setwd("~/size-spectra-life-history/Model_output/seasonal_results/seasKonly/summary_table")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasKonly/summary_table")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -155,7 +155,7 @@ alldata2<- alldata #with seasonality in K only
 
 
 
-setwd("~/size-spectra-life-history/Model_output/seasonal_results/seasTonly/summary_table")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasTonly/summary_table")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -168,8 +168,8 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata3 <- alldata #withseasonality in T only
 
-
-setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna/summary_table")
+ 
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/summary_table")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -181,8 +181,9 @@ alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
 alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata4 <- alldata #with seasonality in both T and K 
+
  
-setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna/baselineSens")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/baselineSens")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -195,7 +196,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata5 <- alldata #alternative values for  K
 
-setwd("~/size-spectra-life-history/Model_output/seasonal_results/tuna/seasTonlySens")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/seasTonlySens")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -243,7 +244,7 @@ ggplot(data = datatable,  aes(x = kappa, y = repro_inkg, group = as.factor(env))
   ylab("Expected Lifetime Reproduction (kg)")   +
   theme_bw()
 
-###Make Table S1
+###Make Table S2
 datatable2 <- rbind(alldata5, alldata2, alldata6, alldata4)
 datatable2$env <- c(rep("Constant", 4), rep("Seasonality - K only", 4), rep("Seasonality - T only", 4), rep("Seasonality", 4)  )
 datatable2$kappa[c(4, 12)]<- c(2.5, 2.5)
