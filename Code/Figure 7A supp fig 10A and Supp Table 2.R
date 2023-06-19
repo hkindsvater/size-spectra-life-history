@@ -103,9 +103,7 @@ surv_data <- lapply(surv_filenames, read.csv)
   food_tab1 <-
   substr(length_filenames, 37, 40) 
     kappa <- c(0.25, 0.5, 1, 2 ) 
-    	#need to add 5 to this string for alldata1
-    	#kappa <- c(0.25, 0.5, 1, 2,5 ) 
-
+     
 ###define the environmental context for these results
 Temp <- substr(length_filenames, 13, 15) 
 TempC <- as.numeric(Temp)-273.15
@@ -126,28 +124,42 @@ colnames(tabdata) <-
 
  
 #point to the files you want to compare
-
-    setwd("~/Documents/size-spectra-life-history/Model_output/fig5/summary_table")
-      data_files <- list.files(pattern = "\\.csv$")
- tabdata  <- calc_metrics(data_files)
- 
- alldata <- as.data.frame(tabdata)
-
-alldata$Max_size <- as.numeric(alldata$Max_length)
-alldata$kappa <- as.numeric(alldata$kappa)
-alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
-alldata$Max_R <- as.numeric(alldata$Max_R)
-
-alldata1<- alldata
-
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasKonly/summary_table")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/constant")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
 alldata <- as.data.frame(tabdata)
 
 alldata$Max_size <- as.numeric(alldata$Max_length)
-alldata$kappa <- (as.numeric(alldata$kappa)*9*3 + as.numeric(alldata$kappa)*3) /12
+alldata$kappa <- as.numeric(alldata$kappa)
+alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
+alldata$Max_R <- as.numeric(alldata$Max_R)
+
+
+alldata1<- alldata #with seasonality in K only
+
+ setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/constant/kappa_sens")
+data_files <- list.files(pattern = "\\.csv$")
+tabdata  <- calc_metrics(data_files)
+
+alldata <- as.data.frame(tabdata)
+
+alldata$Max_size <- as.numeric(alldata$Max_length)
+alldata$kappa <-  c(1.25, 2.5, 1.25, 2.5)
+alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
+alldata$Max_R <- as.numeric(alldata$Max_R)
+
+alldata1.2 <- alldata #alternative values for K
+ 
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasKonly")
+data_files <- list.files(pattern = "\\.csv$")
+tabdata  <- calc_metrics(data_files)
+
+alldata <- as.data.frame(tabdata)
+
+alldata$Max_size <- as.numeric(alldata$Max_length)
+alldata$kappa <- c(0.25, 0.5, 1, .25)
+alldata$kappa <- (alldata$kappa*9*3 + alldata$kappa*3) /12
 alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
 alldata$Max_R <- as.numeric(alldata$Max_R)
 
@@ -155,7 +167,7 @@ alldata2<- alldata #with seasonality in K only
 
 
 
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasTonly/summary_table")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasTonly/")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -169,87 +181,86 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 alldata3 <- alldata #withseasonality in T only
 
  
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/summary_table")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/fullSeasonality")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
 alldata <- as.data.frame(tabdata)
 
 alldata$Max_size <- as.numeric(alldata$Max_length)
-alldata$kappa <-  (as.numeric(alldata$kappa)*9*3 + as.numeric(alldata$kappa)*3) /12
+alldata$kappa <- c(0.25, 0.5, 1, .25)
+alldata$kappa <- (alldata$kappa*9*3 + alldata$kappa*3) /12
 alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
 alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata4 <- alldata #with seasonality in both T and K 
 
  
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/baselineSens")
+  
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/sixmonthseas")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
 alldata <- as.data.frame(tabdata)
 
 alldata$Max_size <- as.numeric(alldata$Max_length)
-alldata$kappa <-  c(1.25, 2.5, 1.25, 2.5)
-alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
+alldata$kappa <- c(0.25, 0.5, 1, 0.25)
+alldata$kappa <- (alldata$kappa*6*3 + alldata$kappa*6) /12
 alldata$Max_R <- as.numeric(alldata$Max_R)
 
-alldata5 <- alldata #alternative values for  K
+alldata5 <- alldata #summer lasts six months (spawning, K, and T)
 
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/tuna/seasTonlySens")
+setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/unconstrainedR_seaskandT")
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
 alldata <- as.data.frame(tabdata)
 
 alldata$Max_size <- as.numeric(alldata$Max_length)
-alldata$kappa <-  c(1.25, 2.5, 1.25, 2.5)
+alldata$kappa <- c(0.25, 0.5, 1, .25)
+alldata$kappa <- (alldata$kappa*9*3 + alldata$kappa*3) /12
+
 alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
 alldata$Max_R <- as.numeric(alldata$Max_R)
 
-alldata6 <- alldata #alternative values for K
+alldata6 <- alldata #spawn year round but seasonal variation in environment
 
-
-
+  
+datatable <- rbind(alldata1,alldata1.2,  alldata4, alldata5, alldata2, alldata3, alldata6)
+datatable$env <- c(rep("Constant year-round", 8), rep("3-month summer", 4), rep("6-month summer", 4), rep("3-month decrease in K during spawning", 4), rep("3-month increase in temp during spawning", 4), rep("3-month summer but year round spawning", 4))
  
-datatable <- rbind(alldata1, alldata2, alldata3, alldata4)
-datatable$env <- c(rep("Constant", 4), rep("Seasonality - K only", 4), rep("Seasonality - T only", 4), rep("Seasonality", 4))
- 
- dev.new(height = 4, width = 4, unit = "in")
-p1 <- ggplot(data = datatable,  aes(x = kappa, y = Max_size, group = as.factor(env))) +
-  geom_point(aes(color = as.factor(env), shape = as.factor(env)),  size = 3) +        
+ library(viridis)
+ pal <- viridis(10, option = "plasma")
+ pal[10] <- "#80CDC1" 
+pal <- pal[c(1, 4, 6, 8,9,10)]
+
+ quartz()
+ p1 <- ggplot(data = datatable,  aes(x = kappa, y = Max_size, group = as.factor(env))) +
+  geom_line(aes(color = as.factor(env), linetype=as.factor(env)),  size = 2) +        
+     scale_color_manual(values =  pal, name = "Environment" ) + 
+   scale_linetype_manual(values = c(2, 2, 2, 1, 5, 1)) +
+   xlim(0.5, 2.6)+
    
-  scale_color_manual(values = alpha(c("#80CDC1",   "#F67280",   "#355C7D",   "#6C5B7B" ), 0.85), name = "Environment" ) + 
-   scale_shape_manual(values = c(19, 17, 18, 15), name = "Environment") +
-   
-  ylim(c(0, 410)) +
+  ylim(0, 410) +
      ylab("Maximum length (cm)")   +
   xlab(expression(kappa)) +
   theme_bw()
   
 p1
 
-Jdensity <-  4.2e+6 
-datatable$repro_inkg <- datatable$lifetime_R/Jdensity
-ggplot(data = datatable,  aes(x = kappa, y = repro_inkg, group = as.factor(env))) +
-  geom_point(aes(color = as.factor(env), shape = as.factor(env)),  size = 3) +        
+  Jdensity <-  4.2e+6 
+  datatable$repro_inkg <- ifelse(datatable$lifetime_R > 100, datatable$lifetime_R/Jdensity, datatable$lifetime_R) #convert everything to kg
+ p2 <-  ggplot(data = datatable,  aes(x = kappa, y = repro_inkg, group = as.factor(env))) +
+  geom_line(aes(color = as.factor(env), linetype=as.factor(env)),  size = 2) +        
+     scale_color_manual(values =  pal, name = "Environment" ) + 
+   scale_linetype_manual(values = c(2, 2, 2, 1, 5, 1)) +
+   xlim(0.5, 2.6)+
    
-  scale_color_manual(values = alpha(c("#80CDC1",   "#F67280",   "#355C7D",   "#6C5B7B" ), 0.85), name = "Environment" ) + 
-   scale_shape_manual(values = c(19, 17, 18, 15), name = "Environment") +
-   
-   xlim(c(0,5)) +
 
-  xlab(expression(kappa)) +
+   xlab(expression(kappa)) +
   
   ylab("Expected Lifetime Reproduction (kg)")   +
-  theme_bw()
-
-###Make Table S2
-datatable2 <- rbind(alldata5, alldata2, alldata6, alldata4)
-datatable2$env <- c(rep("Constant", 4), rep("Seasonality - K only", 4), rep("Seasonality - T only", 4), rep("Seasonality", 4)  )
-datatable2$kappa[c(4, 12)]<- c(2.5, 2.5)
-datatable3 <- datatable2[,-c(1, 4:6)] 
- # write.csv(datatable3, file="tableS2.csv")
-
-
+   theme_bw()
+ 
+p2
 

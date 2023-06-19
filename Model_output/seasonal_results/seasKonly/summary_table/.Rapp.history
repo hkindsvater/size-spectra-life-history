@@ -1,5 +1,0 @@
-setwd("/Users/hollykindsvater/Documents/size-spectra-life-history/Model_output/seasonal_results/seasKonly/summary_table")#
-data_files <- list.files(pattern = "\\.csv$")
-data_files
-290-273.15
-source('~/Dropbox/revision_output/Full_dynamic_model_baseline.R', chdir = TRUE)
