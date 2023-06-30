@@ -248,19 +248,4 @@ pal <- pal[c(1, 4, 6, 8,9,10)]
   
 p1
 
-  Jdensity <-  4.2e+6 
-  datatable$repro_inkg <- ifelse(datatable$lifetime_R > 100, datatable$lifetime_R/Jdensity, datatable$lifetime_R) #convert everything to kg
- p2 <-  ggplot(data = datatable,  aes(x = kappa, y = repro_inkg, group = as.factor(env))) +
-  geom_line(aes(color = as.factor(env), linetype=as.factor(env)),  size = 2) +        
-     scale_color_manual(values =  pal, name = "Environment" ) + 
-   scale_linetype_manual(values = c(2, 2, 2, 1, 5, 1)) +
-   xlim(0.5, 2.6)+
-   
-
-   xlab(expression(kappa)) +
-  
-  ylab("Expected Lifetime Reproduction (kg)")   +
-   theme_bw()
- 
-p2
 
