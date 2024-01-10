@@ -77,7 +77,7 @@ for (kap in 1:timebin) {
 
  
 
-###Plot vs mass (Fig 1A - 1C)
+###Plot vs mass (Fig 2A - 2C)
 kappas <- c(  0.5, 2, 4)
 kap_inc <- matrix(nrow = length(kappas), ncol = length(Mass))
 
@@ -116,6 +116,6 @@ for (h in 1:length(hseq) ) {
   
   
 
-  matplot(Mass, t((temp_mat)), type = "l",  lty=1, lwd=2,  xlab="Mass (kg)", ylab="Metabolic requirements in J/month", col=c("orange", "red", "dark red", "#301934") )  
+  matplot(Mass, t((temp_mat)), type = "l",  lty=1, lwd=2,  xlab="Mass (kg)", ylab="Metabolic costs in J/month", col=c("orange", "red", "dark red", "#301934") )  
   
           
