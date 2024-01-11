@@ -86,7 +86,7 @@ for (kp in 1:length(kappas)) {
  kap_inc[kp, ] <- kappas[kp]*3*Mass^(0.05)
 }
 
-  
+ quartz() 
 matplot( Mass, t(kap_inc), type = "l", las = 1,lty=1, lwd=2,   xlab="Mass (kg)", ylab = "Income (kg/month)", col = c("light green", "green", "dark green"))
         
  

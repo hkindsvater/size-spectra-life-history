@@ -1,3 +1,12 @@
+###note: to make Figure 8 you need to pull from model results from six different model runs.
+###The model outputs are organized by folder to avoid human error with output scenarios. 
+###Therefore this code uses "setwd()" in multiple places to change the working directory in the 
+###function used to manipulate the model output and make the plot. To ensure it runs seamlessly, 
+###I suggest you first use "getwd()" to find your working directory, and set it on line 8 as the initial filepath.
+###then setwd can change the directory to the appropriate output file (for example, see line 136)
+
+filepath = "/Users/hkindsvater/Documents/size-spectra-life-history/"
+
 # install.packages("FSA")
 # install.packages("nlstools")
 
@@ -122,9 +131,9 @@ colnames(tabdata) <-
  return(tabdata)
 }
 
- 
+filepath = "~/Users/hkindsvater/Documents/size-spectra-life-history"
 #point to the files you want to compare
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/constant")
+setwd(paste0(filepath, "Model_output/seasonal_results_fig8/constant"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -138,7 +147,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata1<- alldata #with seasonality in K only
 
- setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/constant/kappa_sens")
+setwd(paste0(filepath, "Model_output/seasonal_results/constant/kappa_sens"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -151,7 +160,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata1.2 <- alldata #alternative values for K
  
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasKonly")
+setwd(paste0(filepath, "Model_output/seasonal_results/seasKonly"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -165,9 +174,8 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata2<- alldata #with seasonality in K only
 
-
-
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/seasTonly/")
+ 
+setwd(paste0(filepath, "Model_output/seasonal_results/seasTonly/"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -181,7 +189,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 alldata3 <- alldata #withseasonality in T only
 
  
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/fullSeasonality")
+setwd(paste0(filepath,"Model_output/seasonal_results/fullSeasonality"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -197,7 +205,7 @@ alldata4 <- alldata #with seasonality in both T and K
 
  
   
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/sixmonthseas")
+setwd(paste0(filepath, "Model_output/seasonal_results/sixmonthseas"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 
@@ -210,7 +218,7 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
 
 alldata5 <- alldata #summer lasts six months (spawning, K, and T)
 
-setwd("~/Documents/size-spectra-life-history/Model_output/seasonal_results/unconstrainedR_seaskandT")
+setwd(paste0(filepath, "Model_output/seasonal_results/unconstrainedR_seaskandT"))
 data_files <- list.files(pattern = "\\.csv$")
 tabdata  <- calc_metrics(data_files)
 

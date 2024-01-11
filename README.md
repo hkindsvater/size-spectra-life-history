@@ -1,5 +1,4 @@
-# Code and model output from: Fear and foraging opportunities interact with temperature and seasonality to drive diversity in fish life histories 
-
+# Code and model output from: Kindsvater, H.K. et al. Size-dependence of food intake and mortality interact with temperature and seasonality to drive diversity in fish life histories, published in Evolutionary Applications. 2024.
 ------------------------------------------------------------------------
 
 These folders represent the model output ("data") produced with the dynamic programming method described in the accompanying manuscript. The data in each figure were analyzed with the included .R scripts, with names corresponding to each figure.
@@ -34,26 +33,26 @@ The output files are written on lines 379-383. The key parameter values (metadat
 
 **Folder structure**
 
-The raw model output folder structure is organized so that the model runs represented in Figs 4-5 and the constant scenarios in Fig 6 are found in folders of corresponding names. The results presented in main text Fig 6C and 6F, as well most of the sensitivity analyses in Fig. 7 are in the *seasonal_results* subfolder, which contains subfolders corresponding to each seasonal scenario. For example, for the seasonal tuna life history in Fig. 6C and 6F, there is a folder named *tuna*. If there are subsets of model runs that are used to make specific comparisons, as in the supplemental tables, these may be duplicated and stored in their own subdirectory. However, as explained below, inside each script files, the filepath and filenames can be combined to identify all metadata for the model outputs presented.
+The raw model output folder structure is organized so that the model runs represented in Figs 5-6 and the constant scenarios in Fig 7 are found in folders of corresponding names. The results presented in main text Fig 7C and 7F, as well most of the sensitivity analyses in Fig. 8 are in the *seasonal_results_fig8* subfolder, which contains subfolders corresponding to each seasonal scenario. For example, for the seasonal tuna life history in Fig. 7C and 7F, there is a folder named *tuna*. If there are subsets of model runs that are used to make specific comparisons, as in the supplemental tables, these may be duplicated and stored in their own subdirectory. However, as explained below, inside each script files, the filepath and filenames can be combined to identify all metadata for the model outputs presented.
 
 The folder *Code* contains a representative version of the main model script (Full_dynamic_model.R, described above). This script can be adjusted manually to recreate each model run (according to kappa, temperature, seasonality, as well as other parameters). This folder also holds all scripts necessary to combine and analyze the raw model outputs and create each figure, including main text Figs. 4-7 and all 10 supplementary figures.
 
--   The code to produce Fig.1 and Supp. Figs. 1 and 2 (which illustrate model assumptions) have their own scripts.
+-   The code to produce Fig.2 and Supp. Figs. 1 and 2 (which illustrate model assumptions) have their own scripts.
 
 -   The code to create Supp. Fig. 3 is found in the *Full_dynamic_model* script, as it illustrates one of the internal data structures of the model (described above).
 
 -   Supp. Fig. 4 can be made with the script *Figure 4.R* as it presents the same data in a different way.
 
-To make the Figs 4-7 and supplemental figs 5-10, the primary model outputs of length and reproduction were combined, along with survival data, using functions that are defined in the first half of each figure script.
+To make the Figs 5-8 and supplemental figs 5-10, the primary model outputs of length and reproduction were combined, along with survival data, using functions that are defined in the first half of each figure script.
 
-For example, in the script *Figure 4.R*, lines 1-64 define functions that are used repreatedly to generate the summary figures in the main text results (and supplementary material). These functions are applied to multiple files in a folder to plot raw model outputs in a systematic way. The files in the appropriate working directory are read in (lines 70-87) and the analysis functions are applied to multipe files to combine model outputs in a table format, which is necessary for the summary plot in the main text, which synthesizes information from five different model scenarios (lines 114-152). The code for the alternate plot presented in Supp. Fig. 4 follows (lines 161-194).
+For example, in the script *Figure 5.R*, lines 1-64 define functions that are used repreatedly to generate the summary figures in the main text results (and supplementary material). These functions are applied to multiple files in a folder to plot raw model outputs in a systematic way. The files in the appropriate working directory are read in and the analysis functions are applied to multiple files to combine model outputs in a table format, which is necessary for the summary plot in the main text, which synthesizes information from five different model scenarios . The code for the alternate plot presented in Supp. Fig. 4 follows.
 
-If you want to trace the data points (model output) presented in Figs 4-7 and supplemental figs 5-10 to their source files, the complete filepath (including the working directory) called in each figure script has the metadata necessary to know the environmental scenario parameters corresponding to each data point.
+If you want to trace the data points (model output) presented in Figs 5-8 and supplemental figs 5-10 to their source files, the complete filepath (including the working directory) called in each figure script has the metadata necessary to know the environmental scenario parameters corresponding to each data point.
 
-For example, in Fig. 5, there are 80 corresponding output files.
+For example, in Fig. 6, there are 80 corresponding output files in Model_output/fig6
 
 -   There is a file for each of the 20 body length data points presented in panel A.
 
--   The 20 survival output files are necessary to calculate expected lifetime reproduction and combined with 20 reproductive output points in panel B.
+-   The 20 survival output files are necessary to calculate expected lifetime reproduction and are combined with a summary of the 20 reproductive output files in panel B.
 
 -   The remaining 20 state data files were used in preliminary analyses and model debugging, and are now stored just for completeness.

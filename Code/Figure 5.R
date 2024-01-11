@@ -1,4 +1,11 @@
- require(fields)
+###note: to make Figure 5 you need to pull from model results from the Fig5 folder.
+###Therefore this code uses "setwd()" after the function is written to change the working directory. To ensure it runs seamlessly, 
+###I suggest you first use "getwd()" to find your working directory, and set it on line 6 as the initial filepath.
+###then setwd can change the directory to the figure 5 folder on line 75. My filepath is included as an example.
+
+filepath = "/Users/hkindsvater/Documents/size-spectra-life-history/"
+
+require(fields)
 
 Tmax=18
 time=1:(Tmax*12)
@@ -56,7 +63,6 @@ realized_M <-  function(survdata, filenames) {
  
 maxage<-  function(survdata, filenames) {
   
-  
   lifespan <- min(which(survdata$x < 0.03))
   
   return(lifespan)
@@ -65,7 +71,7 @@ maxage<-  function(survdata, filenames) {
   
   
 #point to the files you want to compare
-    setwd("~/size-spectra-life-history/Model_output/fig4")
+setwd(paste0(filepath, "Model_output/fig5")) 
  data_files <- list.files(pattern = "\\.csv$")
 
 # 

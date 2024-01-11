@@ -1,4 +1,9 @@
+###note: to make Figure 6 you need to pull from model results from the Fig6 folder.
+###Therefore this code uses "setwd()" after the function is written to change the working directory. To ensure it runs seamlessly, 
+###I suggest you first use "getwd()" to find your working directory, and set it on line 6 as the initial filepath.
+###then setwd can change the directory to the figure 6 folder on line 130. My filepath is included as an example.
 
+filepath = "/Users/hkindsvater/Documents/size-spectra-life-history/"
 
  # install.packages("ggplot2")
 library(ggplot2)
@@ -122,8 +127,8 @@ colnames(tabdata) <-
 
  
 #point to the files you want to compare
+setwd(paste0(filepath, "Model_output/fig6")) 
 
-    setwd("~/size-spectra-life-history/Model_output/fig5")
       data_files <- list.files(pattern = "\\.csv$")
  tabdata  <- calc_metrics(data_files)
  
@@ -131,7 +136,7 @@ colnames(tabdata) <-
 
 alldata$Max_size <- as.numeric(alldata$Max_length)
 alldata$kappa <- as.numeric(alldata$kappa)
-alldata$lifetime_R <- as.numeric(alldata$lifetime_R)
+alldata$lifetime_R <- as.numeric(alldata$lifetime_R)/Jdensity
 alldata$Max_R <- as.numeric(alldata$Max_R)
  
  dev.new(height = 4, width = 4, unit = "in")
@@ -148,12 +153,12 @@ alldata$Max_R <- as.numeric(alldata$Max_R)
   
 
  Jdensity <-  4.2e+6 
- ggplot(data = alldata,  aes(x = kappa, y = lifetime_R/Jdensity, group = as.factor(Temp))) +
+ ggplot(data = alldata,  aes(x = kappa, y = lifetime_R, group = as.factor(Temp))) +
    geom_point(aes(color = as.factor(Temp)), shape = 19, size = 4)  +
    scale_color_manual(values = alpha(c("#018571", "#80CDC1", "#DFC27D", "#A6611A" ), 0.85), name = "Temp (C)") + 
    scale_x_continuous(expression(kappa), 1:10, 1:10) +
    
-   ylab("Expected Lifetime Reproduction (kg)")   +
+   ylab("Expected Lifetime Reproductive Output (kg)")   +
    theme_bw()
  
  alldata$lifetime_R <- round(alldata$lifetime_R/Jdensity,2)
