@@ -105,8 +105,8 @@ x<- mapply(cumsurv,length_data, surv_data, length_filenames)
 
 #  
  
- 
-setwd("~/size-spectra-life-history/Model_output/fig5/summary_table")
+ #steps to define the full filepath for the working directory are outlined in the main text figure code files
+setwd("~/Model_output/fig6/summary_table")
 data_files290 <- list.files(pattern = "\\.csv$")
 tabdata2 <- calc_metrics(data_files290)
 

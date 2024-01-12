@@ -119,7 +119,7 @@ colnames(tabdata) <-
 print(length_filenames)
  return(tabdata)
 }
- 
+#steps to define the working directory are outlined in the main text figure code files
 setwd("~/size-spectra-life-history/Model_output/suppfig8")
 data_file295 <- list.files(pattern = "\\.csv$")
 tabdata2 <- calc_metrics(data_file295)
